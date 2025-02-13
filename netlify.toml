@@ -1,4 +1,18 @@
+[build]
+  publish = "public" # Asegúrate de que este es el directorio donde Netlify encuentra tus archivos estáticos.
+  command = "npm run build" # O el comando que usas para generar tu sitio.
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs" # Si usas Next.js, ajusta según tu framework.
+
+[dev]
+  framework = "next" # O "gatsby", "hugo", etc. según el framework que uses.
+
 [[redirects]]
-  from = "/admin/*"
-  to = "/admin/index.html"
+  from = "/*"
+  to = "/index.html"
   status = 200
+
+[[edge_functions]]
+  function = "contentful"
+  path = "/*"
