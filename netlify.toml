@@ -1,22 +1,17 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "dist"
 
-# Variables de entorno necesarias
 [context.production.environment]
-  NEXT_PUBLIC_SITE_URL = "https://tu-sitio.netlify.app"
-  CONTENTFUL_SPACE_ID = "tu_space_id"
+  NEXT_PUBLIC_SITE_URL = "https://jacmportfolio.netlify.app"
+  CONTENTFUL_SPACE_ID = "8lgocq2r7pfg"
   CONTENTFUL_ENVIRONMENT = "master"
-  CONTENTFUL_PREVIEW_TOKEN = "tu_preview_token"
-  CONTENTFUL_MANAGEMENT_TOKEN = "tu_management_token"
 
-# Redirecciones para evitar errores en Netlify
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Edge Functions (Si las usas)
 [[edge_functions]]
   function = "contentful"
   path = "/*"
