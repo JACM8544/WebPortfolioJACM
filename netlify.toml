@@ -1,18 +1,22 @@
 [build]
-  publish = "public" # Asegúrate de que este es el directorio donde Netlify encuentra tus archivos estáticos.
-  command = "npm run build" # O el comando que usas para generar tu sitio.
+  command = "npm run build"
+  publish = ".next"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs" # Si usas Next.js, ajusta según tu framework.
+# Variables de entorno necesarias
+[context.production.environment]
+  NEXT_PUBLIC_SITE_URL = "https://tu-sitio.netlify.app"
+  CONTENTFUL_SPACE_ID = "tu_space_id"
+  CONTENTFUL_ENVIRONMENT = "master"
+  CONTENTFUL_PREVIEW_TOKEN = "tu_preview_token"
+  CONTENTFUL_MANAGEMENT_TOKEN = "tu_management_token"
 
-[dev]
-  framework = "next" # O "gatsby", "hugo", etc. según el framework que uses.
-
+# Redirecciones para evitar errores en Netlify
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
+# Edge Functions (Si las usas)
 [[edge_functions]]
   function = "contentful"
   path = "/*"
