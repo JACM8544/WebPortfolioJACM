@@ -2,18 +2,11 @@ import { defineStackbitConfig, SiteMapEntry } from "@stackbit/types";
 
 export default defineStackbitConfig({
     stackbitVersion: "~0.6.0",
-    contentSources: [
-        {
-            type: "contentful",
-            spaceId: process.env.CONTENTFUL_SPACE_ID,
-            accessToken: process.env.CONTENTFUL_PREVIEW_TOKEN
-        }
-    ],
     modelExtensions: [
         {
-            name: "PortafolioJACM", // Asegúrate de que este nombre coincida con Contentful
+            name: "PortafolioJACM", // Debe coincidir exactamente con Contentful
             type: "page",
-            urlPath: "/{slug}"
+            urlPath: "/{slug}" // Usa el campo slug para generar la URL
         }
     ],
     siteMap: ({ documents, models }) => {
