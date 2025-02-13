@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Ignorar archivos de Visual Studio
+.vs/
+
+# Ignorar archivos de Stackbit
+.stackbit/
