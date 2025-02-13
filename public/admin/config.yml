@@ -1,0 +1,20 @@
+backend:
+  name: contentful
+  api_root: "https://graphql.contentful.com"
+  branch: main
+  preview_context: production
+
+media_library:
+  name: uploadcare
+  config:
+    publicKey: "demopublickey"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
