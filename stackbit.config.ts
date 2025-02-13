@@ -1,10 +1,10 @@
-import { defineStackbitConfig, SiteMapEntry } from "@stackbit/types";
+﻿import { defineStackbitConfig, SiteMapEntry } from "@stackbit/types";
 
 export default defineStackbitConfig({
     stackbitVersion: "~0.6.0",
     modelExtensions: [
         {
-            name: "PortafolioJACM", // Debe coincidir exactamente con Contentful
+            name: "portafolioJacm", //  Debe coincidir exactamente con Contentful
             type: "page",
             urlPath: "/{slug}" // Usa el campo slug para generar la URL
         }
