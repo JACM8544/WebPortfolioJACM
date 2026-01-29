@@ -382,3 +382,27 @@ main{
   .hero__grid{ grid-template-columns: 1fr; }
   .timeline__item--premium{ grid-template-columns: 1fr; }
 }
+.education{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.education__item{
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.education__item h4{
+  margin: 12px 0 8px 0;
+  font-size: 14px;
+  color: rgba(230,233,239,.92);
+}
+
+@media (min-width: 900px){
+  .education{
+    grid-template-columns: 1fr 1fr;
+  }
+}
