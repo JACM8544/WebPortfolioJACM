@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Jorge Armando Contreras Mercado | Data Engineer</title>
+  <title>Jorge Armando Contreras Mercado | Computer Systems Engineer</title>
   <meta name="description" content="Professional portfolio: experience, skills, and projects of Jorge Armando Contreras Mercado." />
 
   <link rel="stylesheet" href="styles.css" />
@@ -15,23 +15,24 @@
     <div class="container header__grid header__grid--premium">
       <div class="brand">
         <div class="brand__name">Jorge Armando Contreras Mercado</div>
-        <div class="brand__role">Data Engineer &bull; Integrations &bull; Automation &bull; Data Governance</div>
+        <div class="brand__role" data-i18n="brand_role">Data Engineering &bull; Cloud &bull; Automation &bull; Embedded Systems</div>
       </div>
 
       <nav class="nav nav--premium">
-        <a href="#top">Top</a>
-        <a href="#highlights">Highlights</a>
-        <a href="#experience">Experience</a>
-        <a href="#project">Project</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
+        <a href="#top" data-i18n="nav_top">Top</a>
+        <a href="#highlights" data-i18n="nav_highlights">Highlights</a>
+        <a href="#experience" data-i18n="nav_experience">Experience</a>
+        <a href="#project" data-i18n="nav_project">Project</a>
+        <a href="#skills" data-i18n="nav_skills">Skills</a>
+        <a href="#education" data-i18n="nav_education">Education</a>
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">ES</button>
       </nav>
     </div>
   </header>
 
   <main id="top" class="container">
 
-    <!-- HERO (open, no card) -->
+    <!-- HERO -->
     <section class="hero">
       <div class="hero__grid">
         <div class="hero__photo">
@@ -40,7 +41,7 @@
 
         <div class="hero__content">
           <h1 class="hero__title">Jorge Armando Contreras Mercado</h1>
-          <p class="hero__subtitle">Data Engineer with a Solution Architecture mindset</p>
+          <p class="hero__subtitle" data-i18n="hero_subtitle">Computer Systems Engineer</p>
 
           <p class="hero__meta">
             <span>Mexico City, Mexico</span>
@@ -52,10 +53,11 @@
             <a href="https://www.linkedin.com/in/jacm8544" target="_blank" rel="noreferrer">LinkedIn</a>
           </p>
 
-          <p class="hero__about">
-            Data Engineer focused on building reliable data foundations: normalization and modeling, governance-aligned practices,
-            orchestrated pipelines, cloud integrations (Azure, AWS, GCS), and business-facing automation. Experience across logistics,
-            finance, and pharma environments, including multi-cloud operations, WMS (Blue Yonder), and SAP-related integrations.
+          <p class="hero__about" data-i18n="hero_about">
+            Computer Systems Engineer with professional focus on data engineering, multi-cloud automation (Azure, AWS, GCS),
+            orchestrated pipelines, and governance-aligned practices. Academic and applied background in embedded systems,
+            microcontroller instrumentation, RF communication, and domotics. Experience across logistics, finance, and pharma
+            environments.
           </p>
         </div>
       </div>
@@ -63,14 +65,14 @@
 
     <!-- HIGHLIGHTS CAROUSEL -->
     <section id="highlights" class="carousel-section fade-in">
-      <h2 class="section-title" style="text-align:center;">Highlights</h2>
+      <h2 class="section-title" style="text-align:center;" data-i18n="highlights_title">Highlights</h2>
 
       <div class="carousel">
         <div class="carousel__track">
           <div class="carousel__slide carousel__slide--active">
             <div class="carousel__content">
-              <div class="carousel__title">Data Lake & Governance</div>
-              <div class="carousel__text">
+              <div class="carousel__title" data-i18n="hl1_title">Data Lake & Governance</div>
+              <div class="carousel__text" data-i18n="hl1_text">
                 Data standardization and catalogs aligned with DAMA and ISO-inspired guidelines to enable scalable consumption.
               </div>
             </div>
@@ -78,8 +80,8 @@
 
           <div class="carousel__slide">
             <div class="carousel__content">
-              <div class="carousel__title">Automation & Cloud Integrations</div>
-              <div class="carousel__text">
+              <div class="carousel__title" data-i18n="hl2_title">Automation & Cloud Integrations</div>
+              <div class="carousel__text" data-i18n="hl2_text">
                 Multi-cloud automation (Azure, AWS, GCS): file workflows via BOX API on Lambda/Azure Functions, data pipelines in GCS with SharePoint ingestion, and Power Platform solutions.
               </div>
             </div>
@@ -87,8 +89,8 @@
 
           <div class="carousel__slide">
             <div class="carousel__content">
-              <div class="carousel__title">Integrations (WMS / SAP)</div>
-              <div class="carousel__text">
+              <div class="carousel__title" data-i18n="hl3_title">Integrations (WMS / SAP)</div>
+              <div class="carousel__text" data-i18n="hl3_text">
                 Experience building and maintaining integrations around legacy environments (Blue Yonder WMS) and SAP-related flows.
               </div>
             </div>
@@ -96,8 +98,8 @@
 
           <div class="carousel__slide">
             <div class="carousel__content">
-              <div class="carousel__title">Web Scraping & Data Acquisition</div>
-              <div class="carousel__text">
+              <div class="carousel__title" data-i18n="hl4_title">Web Scraping & Data Acquisition</div>
+              <div class="carousel__text" data-i18n="hl4_text">
                 Extraction of structured and unstructured data from web sources, consolidated into ZIP packages with structured tables and associated files indexed by project or unique ID.
               </div>
             </div>
@@ -113,11 +115,11 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE (open timeline) -->
+    <!-- EXPERIENCE -->
     <section id="experience" class="open-section fade-in">
       <div class="section-head">
-        <h2 class="section-title">Professional Experience</h2>
-        <p class="muted">A focused view of responsibilities and technical scope.</p>
+        <h2 class="section-title" data-i18n="exp_title">Professional Experience</h2>
+        <p class="muted" data-i18n="exp_subtitle">A focused view of responsibilities and technical scope.</p>
       </div>
 
       <div class="timeline-open fade-children">
@@ -125,21 +127,21 @@
         <!-- SILANES -->
         <article class="tl-item">
           <div class="tl-head">
-            <div class="pill">Apr 2025 &ndash; Present</div>
+            <div class="pill" data-i18n="sil_date">Apr 2025 &ndash; Present</div>
             <img class="company-logo" src="assets/logos/silaneslogo.png" alt="Laboratorios Silanes logo" />
             <span class="tl-company">Laboratorios Silanes</span>
           </div>
           <div class="tl-role">Data Engineer</div>
           <ul>
-            <li>Develop SQL queries to support multiple business areas and operational needs.</li>
-            <li>Normalize and standardize data to enable a Data Lake platform currently under development.</li>
-            <li>Apply DAMA-aligned governance practices and ISO-inspired guidelines for design and implementation.</li>
-            <li>Build process automations using Microsoft Power Automate.</li>
-            <li>Operate scheduled data refresh processes through Airflow pipelines to keep analytics platforms updated (including WHIZ AI).</li>
-            <li>Build data catalogs to improve normalization, discoverability, and consumption.</li>
-            <li>Automate end-to-end file workflows on BOX via its API, deploying on AWS Lambda and Azure Functions depending on the integration context.</li>
-            <li>Build complete data pipelines in Google Cloud (GCS) with SharePoint integrations for Excel/CSV ingestion, materializing tables from bronze (raw) to gold (consumption) layers.</li>
-            <li>Multi-cloud operations across Azure, AWS, and GCS through console and programmatic integrations for automation across platforms.</li>
+            <li data-i18n="sil_1">Develop SQL queries to support multiple business areas and operational needs.</li>
+            <li data-i18n="sil_2">Normalize and standardize data to enable a Data Lake platform currently under development.</li>
+            <li data-i18n="sil_3">Apply DAMA-aligned governance practices and ISO-inspired guidelines for design and implementation.</li>
+            <li data-i18n="sil_4">Build process automations using Microsoft Power Automate.</li>
+            <li data-i18n="sil_5">Operate scheduled data refresh processes through Airflow pipelines to keep analytics platforms updated (including WHIZ AI).</li>
+            <li data-i18n="sil_6">Build data catalogs to improve normalization, discoverability, and consumption.</li>
+            <li data-i18n="sil_7">Automate end-to-end file workflows on BOX via its API, deploying on AWS Lambda and Azure Functions depending on the integration context.</li>
+            <li data-i18n="sil_8">Build complete data pipelines in Google Cloud (GCS) with SharePoint integrations for Excel/CSV ingestion, materializing tables from bronze (raw) to gold (consumption) layers.</li>
+            <li data-i18n="sil_9">Multi-cloud operations across Azure, AWS, and GCS through console and programmatic integrations for automation across platforms.</li>
           </ul>
         </article>
 
@@ -150,11 +152,11 @@
             <img class="company-logo" src="assets/logos/algorithialogo.png" alt="Algorithia logo" />
             <span class="tl-company">Algorithia</span>
           </div>
-          <div class="tl-role">Data Scientist &mdash; Credit & Collections</div>
+          <div class="tl-role" data-i18n="alg_role">Data Scientist &mdash; Credit & Collections</div>
           <ul>
-            <li>Designed clear data schemas to optimize internal processes.</li>
-            <li>Weekly monitoring of credit and billing for Banco Azteca.</li>
-            <li>Implemented Salesforce data integrations and efficient ETL workflows.</li>
+            <li data-i18n="alg_1">Designed clear data schemas to optimize internal processes.</li>
+            <li data-i18n="alg_2">Weekly monitoring of credit and billing for Banco Azteca.</li>
+            <li data-i18n="alg_3">Implemented Salesforce data integrations and efficient ETL workflows.</li>
           </ul>
         </article>
 
@@ -165,15 +167,15 @@
             <img class="company-logo" src="assets/logos/netlogistiklogo.png" alt="Netlogistik logo" />
             <span class="tl-company">Netlogistik</span>
           </div>
-          <div class="tl-role">Software Engineer &mdash; WMS (Blue Yonder) & Integrations</div>
+          <div class="tl-role" data-i18n="net_role">Software Engineer &mdash; WMS (Blue Yonder) & Integrations</div>
           <ul>
-            <li>Developed and maintained legacy solutions around Blue Yonder WMS for enterprise clients.</li>
-            <li>Built mobile and RF screens integrating SQL, Java, Groovy, and occasional C#.</li>
-            <li>Designed wrappers/triggers to meet client requirements and project-specific workflows.</li>
-            <li>Performed pre-go-live testing (including failure scenarios), diagnosis, and resolution of critical issues.</li>
-            <li>Improved security by identifying SQL injection risks and correcting data type issues.</li>
-            <li>Participated in SAP integrations.</li>
-            <li>Clients: Soriana, Farmacias Guadalajara, DHL, Volkswagen.</li>
+            <li data-i18n="net_1">Developed and maintained legacy solutions around Blue Yonder WMS for enterprise clients.</li>
+            <li data-i18n="net_2">Built mobile and RF screens integrating SQL, Java, Groovy, and occasional C#.</li>
+            <li data-i18n="net_3">Designed wrappers/triggers to meet client requirements and project-specific workflows.</li>
+            <li data-i18n="net_4">Performed pre-go-live testing (including failure scenarios), diagnosis, and resolution of critical issues.</li>
+            <li data-i18n="net_5">Improved security by identifying SQL injection risks and correcting data type issues.</li>
+            <li data-i18n="net_6">Participated in SAP integrations.</li>
+            <li data-i18n="net_7">Clients: Soriana, Farmacias Guadalajara, DHL, Volkswagen.</li>
           </ul>
         </article>
       </div>
@@ -182,25 +184,25 @@
     <!-- PROJECT -->
     <section id="project" class="project-section fade-in">
       <div class="section-head">
-        <h2 class="section-title">Featured Project</h2>
-        <p class="muted">End-to-end system built in parallel (~1 year).</p>
+        <h2 class="section-title" data-i18n="proj_title">Featured Project</h2>
+        <p class="muted" data-i18n="proj_subtitle">End-to-end system built in parallel (~1 year).</p>
       </div>
 
       <div class="project-card">
-        <h3>Procurement & Bidding Intelligence Platform (Pharma Supply)</h3>
+        <h3 data-i18n="proj_name">Procurement & Bidding Intelligence Platform (Pharma Supply)</h3>
 
         <div class="grid-2">
           <div>
             <ul>
-              <li>Web scraping to extract public information related to pharma supply bidding processes.</li>
-              <li>Extraction of structured and unstructured data, compressed into ZIP packages consolidating a structured information table alongside associated files indexed by project or unique ID.</li>
-              <li>Database storage and data modeling for analytics and operational usage.</li>
-              <li>Power Apps platform to interact with the database.</li>
-              <li>Automation of document generation for bidding participation.</li>
-              <li>Power BI dashboards for business intelligence and monitoring.</li>
+              <li data-i18n="proj_1">Web scraping to extract public information related to pharma supply bidding processes.</li>
+              <li data-i18n="proj_2">Extraction of structured and unstructured data, compressed into ZIP packages consolidating a structured information table alongside associated files indexed by project or unique ID.</li>
+              <li data-i18n="proj_3">Database storage and data modeling for analytics and operational usage.</li>
+              <li data-i18n="proj_4">Power Apps platform to interact with the database.</li>
+              <li data-i18n="proj_5">Automation of document generation for bidding participation.</li>
+              <li data-i18n="proj_6">Power BI dashboards for business intelligence and monitoring.</li>
             </ul>
 
-            <p class="muted">Built for a company not disclosed publicly at this time.</p>
+            <p class="muted" data-i18n="proj_note">Built for a company not disclosed publicly at this time.</p>
           </div>
 
           <div class="callout">
@@ -212,34 +214,34 @@
               <span class="chip">Data Modeling</span>
               <span class="chip">Power Apps</span>
               <span class="chip">Power BI</span>
-              <span class="chip">Document Automation</span>
+              <span class="chip" data-i18n="proj_chip_doc">Document Automation</span>
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS (open floating chips) -->
+    <!-- SKILLS -->
     <section id="skills" class="skills-open fade-in">
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title" data-i18n="skills_title">Skills</h2>
 
       <div class="fade-children">
         <div class="skill-category">
-          <h3>Data Engineering</h3>
+          <h3 data-i18n="sk_cat1">Data Engineering</h3>
           <div class="skill-divider"></div>
           <p class="chips">
             <span class="chip">Python</span>
             <span class="chip">SQL</span>
             <span class="chip">ETL / ELT</span>
             <span class="chip">Data Modeling</span>
-            <span class="chip">Database Design</span>
-            <span class="chip">Data Normalization</span>
-            <span class="chip">Data Quality</span>
+            <span class="chip" data-i18n="sk_dbdesign">Database Design</span>
+            <span class="chip" data-i18n="sk_datanorm">Data Normalization</span>
+            <span class="chip" data-i18n="sk_dataqual">Data Quality</span>
           </p>
         </div>
 
         <div class="skill-category">
-          <h3>Automation & BI</h3>
+          <h3 data-i18n="sk_cat2">Automation & BI</h3>
           <div class="skill-divider"></div>
           <p class="chips">
             <span class="chip">Power Apps</span>
@@ -251,75 +253,78 @@
         </div>
 
         <div class="skill-category">
-          <h3>Orchestration, Integrations & Cloud</h3>
+          <h3 data-i18n="sk_cat3">Orchestration, Integrations & Cloud</h3>
           <div class="skill-divider"></div>
           <p class="chips">
             <span class="chip">Airflow</span>
-            <span class="chip">SAP Integrations</span>
+            <span class="chip" data-i18n="sk_sap">SAP Integrations</span>
             <span class="chip">WMS Blue Yonder</span>
             <span class="chip">Azure Functions</span>
             <span class="chip">AWS Lambda</span>
             <span class="chip">Google Cloud (GCS)</span>
-            <span class="chip">SharePoint Integrations</span>
+            <span class="chip" data-i18n="sk_sp">SharePoint Integrations</span>
           </p>
         </div>
 
         <div class="skill-category">
-          <h3>Academic Focus Areas</h3>
+          <h3 data-i18n="sk_cat4">Embedded Systems & IoT</h3>
           <div class="skill-divider"></div>
           <p class="chips">
-            <span class="chip">Data Mining</span>
-            <span class="chip">Mobile Applications</span>
-            <span class="chip">Signals Theory</span>
-            <span class="chip">Operating Systems</span>
-            <span class="chip">Microcontrollers / Assembly</span>
-            <span class="chip">Data Governance</span>
+            <span class="chip" data-i18n="sk_instr">Instrumentation</span>
+            <span class="chip" data-i18n="sk_microauto">Microcontroller Automation</span>
+            <span class="chip" data-i18n="sk_rf">RF Communication</span>
+            <span class="chip" data-i18n="sk_encdec">Encoding / Decoding</span>
+            <span class="chip" data-i18n="sk_domotics">Domotics</span>
+            <span class="chip">Assembly</span>
+            <span class="chip">UART</span>
+          </p>
+        </div>
+
+        <div class="skill-category">
+          <h3 data-i18n="sk_cat5">Academic Focus Areas</h3>
+          <div class="skill-divider"></div>
+          <p class="chips">
+            <span class="chip" data-i18n="sk_dm">Data Mining</span>
+            <span class="chip" data-i18n="sk_mobile">Mobile Applications</span>
+            <span class="chip" data-i18n="sk_signals">Signals Theory</span>
+            <span class="chip" data-i18n="sk_os">Operating Systems</span>
+            <span class="chip" data-i18n="sk_gov">Data Governance</span>
+            <span class="chip" data-i18n="sk_imganalysis">Image Analysis</span>
           </p>
         </div>
       </div>
     </section>
 
-    <!-- EDUCATION (open) -->
+    <!-- EDUCATION -->
     <section id="education" class="education-open fade-in">
-      <h2 class="section-title">Education</h2>
+      <h2 class="section-title" data-i18n="edu_title">Education</h2>
 
       <div class="fade-children">
         <div class="edu-item">
           <h3>Instituto Polit&eacute;cnico Nacional (IPN) &mdash; ESCOM</h3>
-          <p class="muted"><strong>Computer Systems Engineering</strong> &mdash; 2017&ndash;2022</p>
+          <p class="muted" data-i18n="edu1_degree"><strong>Computer Systems Engineering</strong> &mdash; 2017&ndash;2022</p>
 
-          <h4>Selected coursework & applied work</h4>
+          <h4 data-i18n="edu1_subtitle">Selected coursework & applied work</h4>
           <ul>
-            <li><strong>Data Mining:</strong> hands-on practice with clustering and association rules.</li>
-            <li>
-              <strong>Image Analysis:</strong> implemented multiple image processing and analysis algorithms.
-              Combined with data mining to build image-based grouping/training over brain images to support Alzheimer's prediction.
-            </li>
-            <li>
-              <strong>Signals Theory:</strong> data encoding/decoding; applied concepts to transmit coded information over radio.
-            </li>
-            <li>
-              <strong>Operating Systems:</strong> sockets and communication methods (inter-process/network communication fundamentals).
-            </li>
-            <li>
-              <strong>Microcontrollers:</strong> instrumentation practices and applied microcontroller usage; UART-based communication.
-            </li>
-            <li>
-              <strong>Data Governance:</strong> ISO standards and international practices for information security and integrity.
-            </li>
+            <li data-i18n="edu1_1"><strong>Data Mining:</strong> hands-on practice with clustering and association rules.</li>
+            <li data-i18n="edu1_2"><strong>Image Analysis:</strong> implemented multiple image processing and analysis algorithms. Combined with data mining to build image-based grouping/training over brain images to support Alzheimer's prediction.</li>
+            <li data-i18n="edu1_3"><strong>Signals Theory:</strong> data encoding/decoding; applied concepts to transmit coded information over radio frequency.</li>
+            <li data-i18n="edu1_4"><strong>Operating Systems:</strong> sockets and communication methods (inter-process/network communication fundamentals).</li>
+            <li data-i18n="edu1_5"><strong>Microcontrollers:</strong> instrumentation, microcontroller-based automation, UART communication, and applied domotics projects.</li>
+            <li data-i18n="edu1_6"><strong>Data Governance:</strong> ISO standards and international practices for information security and integrity.</li>
           </ul>
         </div>
 
         <div class="edu-item">
           <h3>Instituto Polit&eacute;cnico Nacional (IPN)</h3>
-          <p class="muted"><strong>Industrial Processes (Technical degree)</strong> &mdash; 2014&ndash;2017</p>
+          <p class="muted" data-i18n="edu2_degree"><strong>Industrial Processes (Technical degree)</strong> &mdash; 2014&ndash;2017</p>
 
-          <h4>Technical focus</h4>
+          <h4 data-i18n="edu2_subtitle">Technical focus</h4>
           <ul>
-            <li>Metrology and measurement fundamentals.</li>
-            <li>Machine tools and industrial manufacturing practices.</li>
-            <li>CNC programming and operation.</li>
-            <li>Welding and shop-floor process basics.</li>
+            <li data-i18n="edu2_1">Metrology and measurement fundamentals.</li>
+            <li data-i18n="edu2_2">Machine tools and industrial manufacturing practices.</li>
+            <li data-i18n="edu2_3">CNC programming and operation.</li>
+            <li data-i18n="edu2_4">Welding and shop-floor process basics.</li>
           </ul>
         </div>
       </div>
@@ -327,17 +332,195 @@
 
     <footer class="footer">
       <p class="muted">
-        &copy; <span id="year"></span> Jorge Armando Contreras Mercado. Last updated: <span id="lastUpdated"></span>.
+        &copy; <span id="year"></span> Jorge Armando Contreras Mercado. <span data-i18n="footer_updated">Last updated:</span> <span id="lastUpdated"></span>.
       </p>
     </footer>
   </main>
 
   <script>
+    /* ── Translations ── */
+    var i18n = {
+      en: {
+        brand_role: "Data Engineering \u2022 Cloud \u2022 Automation \u2022 Embedded Systems",
+        nav_top: "Top", nav_highlights: "Highlights", nav_experience: "Experience",
+        nav_project: "Project", nav_skills: "Skills", nav_education: "Education",
+        hero_subtitle: "Computer Systems Engineer",
+        hero_about: "Computer Systems Engineer with professional focus on data engineering, multi-cloud automation (Azure, AWS, GCS), orchestrated pipelines, and governance-aligned practices. Academic and applied background in embedded systems, microcontroller instrumentation, RF communication, and domotics. Experience across logistics, finance, and pharma environments.",
+        highlights_title: "Highlights",
+        hl1_title: "Data Lake & Governance",
+        hl1_text: "Data standardization and catalogs aligned with DAMA and ISO-inspired guidelines to enable scalable consumption.",
+        hl2_title: "Automation & Cloud Integrations",
+        hl2_text: "Multi-cloud automation (Azure, AWS, GCS): file workflows via BOX API on Lambda/Azure Functions, data pipelines in GCS with SharePoint ingestion, and Power Platform solutions.",
+        hl3_title: "Integrations (WMS / SAP)",
+        hl3_text: "Experience building and maintaining integrations around legacy environments (Blue Yonder WMS) and SAP-related flows.",
+        hl4_title: "Web Scraping & Data Acquisition",
+        hl4_text: "Extraction of structured and unstructured data from web sources, consolidated into ZIP packages with structured tables and associated files indexed by project or unique ID.",
+        exp_title: "Professional Experience",
+        exp_subtitle: "A focused view of responsibilities and technical scope.",
+        sil_date: "Apr 2025 \u2013 Present",
+        sil_1: "Develop SQL queries to support multiple business areas and operational needs.",
+        sil_2: "Normalize and standardize data to enable a Data Lake platform currently under development.",
+        sil_3: "Apply DAMA-aligned governance practices and ISO-inspired guidelines for design and implementation.",
+        sil_4: "Build process automations using Microsoft Power Automate.",
+        sil_5: "Operate scheduled data refresh processes through Airflow pipelines to keep analytics platforms updated (including WHIZ AI).",
+        sil_6: "Build data catalogs to improve normalization, discoverability, and consumption.",
+        sil_7: "Automate end-to-end file workflows on BOX via its API, deploying on AWS Lambda and Azure Functions depending on the integration context.",
+        sil_8: "Build complete data pipelines in Google Cloud (GCS) with SharePoint integrations for Excel/CSV ingestion, materializing tables from bronze (raw) to gold (consumption) layers.",
+        sil_9: "Multi-cloud operations across Azure, AWS, and GCS through console and programmatic integrations for automation across platforms.",
+        alg_role: "Data Scientist \u2014 Credit & Collections",
+        alg_1: "Designed clear data schemas to optimize internal processes.",
+        alg_2: "Weekly monitoring of credit and billing for Banco Azteca.",
+        alg_3: "Implemented Salesforce data integrations and efficient ETL workflows.",
+        net_role: "Software Engineer \u2014 WMS (Blue Yonder) & Integrations",
+        net_1: "Developed and maintained legacy solutions around Blue Yonder WMS for enterprise clients.",
+        net_2: "Built mobile and RF screens integrating SQL, Java, Groovy, and occasional C#.",
+        net_3: "Designed wrappers/triggers to meet client requirements and project-specific workflows.",
+        net_4: "Performed pre-go-live testing (including failure scenarios), diagnosis, and resolution of critical issues.",
+        net_5: "Improved security by identifying SQL injection risks and correcting data type issues.",
+        net_6: "Participated in SAP integrations.",
+        net_7: "Clients: Soriana, Farmacias Guadalajara, DHL, Volkswagen.",
+        proj_title: "Featured Project",
+        proj_subtitle: "End-to-end system built in parallel (~1 year).",
+        proj_name: "Procurement & Bidding Intelligence Platform (Pharma Supply)",
+        proj_1: "Web scraping to extract public information related to pharma supply bidding processes.",
+        proj_2: "Extraction of structured and unstructured data, compressed into ZIP packages consolidating a structured information table alongside associated files indexed by project or unique ID.",
+        proj_3: "Database storage and data modeling for analytics and operational usage.",
+        proj_4: "Power Apps platform to interact with the database.",
+        proj_5: "Automation of document generation for bidding participation.",
+        proj_6: "Power BI dashboards for business intelligence and monitoring.",
+        proj_note: "Built for a company not disclosed publicly at this time.",
+        proj_chip_doc: "Document Automation",
+        skills_title: "Skills",
+        sk_cat1: "Data Engineering", sk_cat2: "Automation & BI",
+        sk_cat3: "Orchestration, Integrations & Cloud",
+        sk_cat4: "Embedded Systems & IoT", sk_cat5: "Academic Focus Areas",
+        sk_dbdesign: "Database Design", sk_datanorm: "Data Normalization", sk_dataqual: "Data Quality",
+        sk_sap: "SAP Integrations", sk_sp: "SharePoint Integrations",
+        sk_instr: "Instrumentation", sk_microauto: "Microcontroller Automation",
+        sk_rf: "RF Communication", sk_encdec: "Encoding / Decoding", sk_domotics: "Domotics",
+        sk_dm: "Data Mining", sk_mobile: "Mobile Applications", sk_signals: "Signals Theory",
+        sk_os: "Operating Systems", sk_gov: "Data Governance", sk_imganalysis: "Image Analysis",
+        edu_title: "Education",
+        edu1_degree: "<strong>Computer Systems Engineering</strong> \u2014 2017\u20132022",
+        edu1_subtitle: "Selected coursework & applied work",
+        edu1_1: "<strong>Data Mining:</strong> hands-on practice with clustering and association rules.",
+        edu1_2: "<strong>Image Analysis:</strong> implemented multiple image processing and analysis algorithms. Combined with data mining to build image-based grouping/training over brain images to support Alzheimer's prediction.",
+        edu1_3: "<strong>Signals Theory:</strong> data encoding/decoding; applied concepts to transmit coded information over radio frequency.",
+        edu1_4: "<strong>Operating Systems:</strong> sockets and communication methods (inter-process/network communication fundamentals).",
+        edu1_5: "<strong>Microcontrollers:</strong> instrumentation, microcontroller-based automation, UART communication, and applied domotics projects.",
+        edu1_6: "<strong>Data Governance:</strong> ISO standards and international practices for information security and integrity.",
+        edu2_degree: "<strong>Industrial Processes (Technical degree)</strong> \u2014 2014\u20132017",
+        edu2_subtitle: "Technical focus",
+        edu2_1: "Metrology and measurement fundamentals.",
+        edu2_2: "Machine tools and industrial manufacturing practices.",
+        edu2_3: "CNC programming and operation.",
+        edu2_4: "Welding and shop-floor process basics.",
+        footer_updated: "Last updated:"
+      },
+      es: {
+        brand_role: "Ingenier\u00eda de Datos \u2022 Cloud \u2022 Automatizaci\u00f3n \u2022 Sistemas Embebidos",
+        nav_top: "Inicio", nav_highlights: "Destacados", nav_experience: "Experiencia",
+        nav_project: "Proyecto", nav_skills: "Habilidades", nav_education: "Educaci\u00f3n",
+        hero_subtitle: "Ingeniero en Sistemas Computacionales",
+        hero_about: "Ingeniero en Sistemas Computacionales con enfoque profesional en ingenier\u00eda de datos, automatizaci\u00f3n multi-nube (Azure, AWS, GCS), pipelines orquestados y pr\u00e1cticas alineadas a gobernanza. Formaci\u00f3n acad\u00e9mica y aplicada en sistemas embebidos, instrumentaci\u00f3n con microcontroladores, comunicaci\u00f3n por radiofrecuencia y dom\u00f3tica. Experiencia en log\u00edstica, finanzas y farmac\u00e9utica.",
+        highlights_title: "Destacados",
+        hl1_title: "Data Lake y Gobernanza",
+        hl1_text: "Estandarizaci\u00f3n de datos y cat\u00e1logos alineados con DAMA y lineamientos inspirados en ISO para habilitar consumo escalable.",
+        hl2_title: "Automatizaci\u00f3n e Integraciones Cloud",
+        hl2_text: "Automatizaci\u00f3n multi-nube (Azure, AWS, GCS): flujos de archivos v\u00eda BOX API en Lambda/Azure Functions, pipelines en GCS con ingesta desde SharePoint, y soluciones Power Platform.",
+        hl3_title: "Integraciones (WMS / SAP)",
+        hl3_text: "Experiencia construyendo y manteniendo integraciones en entornos legacy (Blue Yonder WMS) y flujos relacionados con SAP.",
+        hl4_title: "Web Scraping y Adquisici\u00f3n de Datos",
+        hl4_text: "Extracci\u00f3n de datos estructurados y no estructurados de fuentes web, consolidados en paquetes ZIP con tablas estructuradas y archivos asociados indexados por proyecto o ID \u00fanico.",
+        exp_title: "Experiencia Profesional",
+        exp_subtitle: "Vista enfocada de responsabilidades y alcance t\u00e9cnico.",
+        sil_date: "Abr 2025 \u2013 Presente",
+        sil_1: "Desarrollo de consultas SQL para soportar m\u00faltiples \u00e1reas de negocio y necesidades operativas.",
+        sil_2: "Normalizaci\u00f3n y estandarizaci\u00f3n de datos para habilitar una plataforma de Data Lake en desarrollo.",
+        sil_3: "Aplicaci\u00f3n de pr\u00e1cticas de gobernanza alineadas a DAMA y lineamientos inspirados en ISO para dise\u00f1o e implementaci\u00f3n.",
+        sil_4: "Construcci\u00f3n de automatizaciones de procesos usando Microsoft Power Automate.",
+        sil_5: "Operaci\u00f3n de procesos programados de actualizaci\u00f3n de datos mediante pipelines de Airflow para mantener plataformas anal\u00edticas actualizadas (incluyendo WHIZ AI).",
+        sil_6: "Construcci\u00f3n de cat\u00e1logos de datos para mejorar normalizaci\u00f3n, descubrimiento y consumo.",
+        sil_7: "Automatizaci\u00f3n de flujos completos de archivos en BOX v\u00eda su API, desplegando en AWS Lambda y Azure Functions seg\u00fan el contexto de integraci\u00f3n.",
+        sil_8: "Construcci\u00f3n de pipelines completos en Google Cloud (GCS) con integraciones a SharePoint para ingesta de Excel/CSV, materializando tablas desde capa bronze (raw) hasta gold (consumo).",
+        sil_9: "Operaciones multi-nube en Azure, AWS y GCS mediante consola e integraciones program\u00e1ticas para automatizaci\u00f3n entre plataformas.",
+        alg_role: "Cient\u00edfico de Datos \u2014 Cr\u00e9dito y Cobranza",
+        alg_1: "Dise\u00f1o de esquemas de datos claros para optimizar procesos internos.",
+        alg_2: "Monitoreo semanal de cr\u00e9dito y facturaci\u00f3n para Banco Azteca.",
+        alg_3: "Implementaci\u00f3n de integraciones de datos con Salesforce y flujos ETL eficientes.",
+        net_role: "Ingeniero de Software \u2014 WMS (Blue Yonder) e Integraciones",
+        net_1: "Desarrollo y mantenimiento de soluciones legacy en Blue Yonder WMS para clientes empresariales.",
+        net_2: "Construcci\u00f3n de pantallas m\u00f3viles y RF integrando SQL, Java, Groovy y ocasionalmente C#.",
+        net_3: "Dise\u00f1o de wrappers/triggers para cumplir requerimientos de clientes y flujos espec\u00edficos de proyectos.",
+        net_4: "Ejecuci\u00f3n de pruebas pre-salida en vivo (incluyendo escenarios de fallo), diagn\u00f3stico y resoluci\u00f3n de problemas cr\u00edticos.",
+        net_5: "Mejora de seguridad identificando riesgos de inyecci\u00f3n SQL y corrigiendo problemas de tipos de datos.",
+        net_6: "Participaci\u00f3n en integraciones SAP.",
+        net_7: "Clientes: Soriana, Farmacias Guadalajara, DHL, Volkswagen.",
+        proj_title: "Proyecto Destacado",
+        proj_subtitle: "Sistema end-to-end construido en paralelo (~1 a\u00f1o).",
+        proj_name: "Plataforma de Inteligencia de Licitaciones y Adquisiciones (Sector Farmac\u00e9utico)",
+        proj_1: "Web scraping para extraer informaci\u00f3n p\u00fablica relacionada con procesos de licitaci\u00f3n del sector farmac\u00e9utico.",
+        proj_2: "Extracci\u00f3n de datos estructurados y no estructurados, comprimidos en paquetes ZIP consolidando una tabla de informaci\u00f3n estructurada junto con archivos asociados indexados por proyecto o ID \u00fanico.",
+        proj_3: "Almacenamiento en base de datos y modelado de datos para anal\u00edtica y uso operativo.",
+        proj_4: "Plataforma Power Apps para interactuar con la base de datos.",
+        proj_5: "Automatizaci\u00f3n de generaci\u00f3n de documentos para participaci\u00f3n en licitaciones.",
+        proj_6: "Dashboards de Power BI para inteligencia de negocio y monitoreo.",
+        proj_note: "Construido para una empresa no divulgada p\u00fablicamente en este momento.",
+        proj_chip_doc: "Automatizaci\u00f3n Documental",
+        skills_title: "Habilidades",
+        sk_cat1: "Ingenier\u00eda de Datos", sk_cat2: "Automatizaci\u00f3n y BI",
+        sk_cat3: "Orquestaci\u00f3n, Integraciones y Cloud",
+        sk_cat4: "Sistemas Embebidos e IoT", sk_cat5: "\u00c1reas de Enfoque Acad\u00e9mico",
+        sk_dbdesign: "Dise\u00f1o de Bases de Datos", sk_datanorm: "Normalizaci\u00f3n de Datos", sk_dataqual: "Calidad de Datos",
+        sk_sap: "Integraciones SAP", sk_sp: "Integraciones SharePoint",
+        sk_instr: "Instrumentaci\u00f3n", sk_microauto: "Automatizaci\u00f3n con Microcontroladores",
+        sk_rf: "Comunicaci\u00f3n por RF", sk_encdec: "Codificaci\u00f3n / Decodificaci\u00f3n", sk_domotics: "Dom\u00f3tica",
+        sk_dm: "Miner\u00eda de Datos", sk_mobile: "Aplicaciones M\u00f3viles", sk_signals: "Teor\u00eda de Se\u00f1ales",
+        sk_os: "Sistemas Operativos", sk_gov: "Gobernanza de Datos", sk_imganalysis: "An\u00e1lisis de Im\u00e1genes",
+        edu_title: "Educaci\u00f3n",
+        edu1_degree: "<strong>Ingenier\u00eda en Sistemas Computacionales</strong> \u2014 2017\u20132022",
+        edu1_subtitle: "Materias y trabajo aplicado seleccionados",
+        edu1_1: "<strong>Miner\u00eda de Datos:</strong> pr\u00e1ctica con clustering y reglas de asociaci\u00f3n.",
+        edu1_2: "<strong>An\u00e1lisis de Im\u00e1genes:</strong> implementaci\u00f3n de m\u00faltiples algoritmos de procesamiento y an\u00e1lisis de im\u00e1genes. Combinado con miner\u00eda de datos para construir agrupamiento/entrenamiento basado en im\u00e1genes cerebrales para apoyar la predicci\u00f3n de Alzheimer.",
+        edu1_3: "<strong>Teor\u00eda de Se\u00f1ales:</strong> codificaci\u00f3n/decodificaci\u00f3n de datos; conceptos aplicados para transmitir informaci\u00f3n codificada por radiofrecuencia.",
+        edu1_4: "<strong>Sistemas Operativos:</strong> sockets y m\u00e9todos de comunicaci\u00f3n (fundamentos de comunicaci\u00f3n inter-procesos y de red).",
+        edu1_5: "<strong>Microcontroladores:</strong> instrumentaci\u00f3n, automatizaci\u00f3n basada en microcontroladores, comunicaci\u00f3n UART y proyectos aplicados de dom\u00f3tica.",
+        edu1_6: "<strong>Gobernanza de Datos:</strong> est\u00e1ndares ISO y pr\u00e1cticas internacionales para seguridad e integridad de la informaci\u00f3n.",
+        edu2_degree: "<strong>Procesos Industriales (T\u00e9cnico)</strong> \u2014 2014\u20132017",
+        edu2_subtitle: "Enfoque t\u00e9cnico",
+        edu2_1: "Fundamentos de metrolog\u00eda y medici\u00f3n.",
+        edu2_2: "M\u00e1quinas herramienta y pr\u00e1cticas de manufactura industrial.",
+        edu2_3: "Programaci\u00f3n y operaci\u00f3n CNC.",
+        edu2_4: "Soldadura y fundamentos de procesos de taller.",
+        footer_updated: "\u00daltima actualizaci\u00f3n:"
+      }
+    };
+
+    var currentLang = "en";
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      var strings = i18n[lang];
+      document.querySelectorAll("[data-i18n]").forEach(function (el) {
+        var key = el.getAttribute("data-i18n");
+        if (strings[key] !== undefined) {
+          el.innerHTML = strings[key];
+        }
+      });
+      document.getElementById("langToggle").textContent = lang === "en" ? "ES" : "EN";
+      document.getElementById("lastUpdated").textContent =
+        new Date().toLocaleDateString(lang === "en" ? "en-US" : "es-MX", { year: "numeric", month: "long", day: "numeric" });
+    }
+
+    document.getElementById("langToggle").addEventListener("click", function () {
+      setLang(currentLang === "en" ? "es" : "en");
+    });
+
     /* ── Date ── */
-    const now = new Date();
-    document.getElementById("year").textContent = String(now.getFullYear());
+    document.getElementById("year").textContent = String(new Date().getFullYear());
     document.getElementById("lastUpdated").textContent =
-      now.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+      new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 
     /* ── Carousel (fade) ── */
     (function () {
@@ -389,7 +572,6 @@
 
       els.forEach(function (el) { observer.observe(el); });
 
-      /* Staggered children */
       var childObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
