@@ -221,6 +221,39 @@ main{
   max-width: 72ch;
 }
 
+/* Hero stats */
+.hero__stats{
+  display: flex;
+  gap: 28px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--stroke);
+}
+
+.stat{ text-align: center; }
+
+.stat__number{
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -.5px;
+}
+
+.stat__plus{
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.stat__label{
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-top: 2px;
+}
+
 /* ── HIGHLIGHTS CAROUSEL ── */
 .carousel-section{
   padding: 30px 0;
@@ -339,6 +372,12 @@ main{
 .tl-item:first-child::before{
   background: var(--accent);
   box-shadow: 0 0 12px rgba(200,169,96,.5);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse{
+  0%, 100%{ box-shadow: 0 0 6px rgba(200,169,96,.4); }
+  50%{ box-shadow: 0 0 18px rgba(200,169,96,.7); }
 }
 
 .tl-head{
@@ -446,12 +485,22 @@ main{
 .skill-category:last-child{ margin-bottom: 0; }
 
 .skill-category h3{
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 14px;
   font-weight: 700;
   color: var(--accent);
   margin: 0 0 10px 0;
   letter-spacing: .3px;
   text-transform: uppercase;
+}
+
+.sk-icon{
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: .85;
 }
 
 .skill-divider{
@@ -562,4 +611,5 @@ main{
   .hero__grid{ grid-template-columns: 1fr; text-align: center; }
   .hero__photo{ max-width: 220px; margin: 0 auto; }
   .hero__about{ margin-left: auto; margin-right: auto; }
+  .hero__stats{ justify-content: center; }
 }
