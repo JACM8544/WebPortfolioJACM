@@ -339,19 +339,17 @@
     document.getElementById("lastUpdated").textContent =
       now.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 
-    /* ── Carousel ── */
+    /* ── Carousel (fade) ── */
     (function () {
-      const track = document.querySelector(".carousel__track");
-      const slides = document.querySelectorAll(".carousel__slide");
-      const dots = document.querySelectorAll(".carousel__dot");
-      let current = 0;
-      let interval;
+      var slides = document.querySelectorAll(".carousel__slide");
+      var dots = document.querySelectorAll(".carousel__dot");
+      var current = 0;
+      var interval;
 
       function goTo(index) {
         slides[current].classList.remove("carousel__slide--active");
         dots[current].classList.remove("carousel__dot--active");
         current = index;
-        track.style.transform = "translateX(-" + current * 100 + "%)";
         slides[current].classList.add("carousel__slide--active");
         dots[current].classList.add("carousel__dot--active");
       }
