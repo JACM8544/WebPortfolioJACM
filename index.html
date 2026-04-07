@@ -18,7 +18,11 @@
         <div class="brand__role" data-i18n="brand_role">Data Engineering &bull; Cloud &bull; Automation &bull; Embedded Systems</div>
       </div>
 
-      <nav class="nav nav--premium">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav nav--premium" id="mainNav">
         <a href="#top" data-i18n="nav_top">Top</a>
         <a href="#highlights" data-i18n="nav_highlights">Highlights</a>
         <a href="#experience" data-i18n="nav_experience">Experience</a>
@@ -547,6 +551,22 @@
     document.getElementById("langToggle").addEventListener("click", function () {
       setLang(currentLang === "en" ? "es" : "en");
     });
+
+    /* ── Mobile menu ── */
+    (function () {
+      var toggle = document.getElementById("menuToggle");
+      var nav = document.getElementById("mainNav");
+      toggle.addEventListener("click", function () {
+        toggle.classList.toggle("active");
+        nav.classList.toggle("open");
+      });
+      nav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          toggle.classList.remove("active");
+          nav.classList.remove("open");
+        });
+      });
+    })();
 
     /* ── Date ── */
     document.getElementById("year").textContent = String(new Date().getFullYear());
