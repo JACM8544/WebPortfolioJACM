@@ -30,6 +30,7 @@
         <a href="#highlights" data-i18n="nav_highlights">Highlights</a>
         <a href="#experience" data-i18n="nav_experience">Experience</a>
         <a href="#project" data-i18n="nav_project">Project</a>
+        <a href="#alzheimer" data-i18n="nav_alzheimer">Alzheimer</a>
         <a href="#live" data-i18n="nav_live">Live Data</a>
         <a href="#skills" data-i18n="nav_skills">Skills</a>
         <a href="#education" data-i18n="nav_education">Education</a>
@@ -248,6 +249,66 @@
       </div>
     </section>
 
+    <!-- ALZHEIMER PROJECT -->
+    <section id="alzheimer" class="open-section fade-in">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="alz_title">Academic Project: Alzheimer's MRI Analysis</h2>
+        <p class="muted" data-i18n="alz_subtitle">Data Mining &mdash; IPN ESCOM</p>
+      </div>
+
+      <p class="alz-desc" data-i18n="alz_desc">
+        Classification and analysis of brain MRI scans to identify patterns associated with different stages of dementia.
+        The dataset contains 5,121 brain images across 4 categories, combined with clinical data (OASIS) including
+        cognitive scores (MMSE), dementia rating (CDR), and brain volume measurements. Originally built with KNIME;
+        interactive demo below.
+      </p>
+
+      <!-- Pipeline diagram -->
+      <div class="pipeline">
+        <div class="pipeline__step">
+          <div class="pipeline__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+          <div class="pipeline__label" data-i18n="pipe_1">MRI Images<br><small>5,121 scans</small></div>
+        </div>
+        <div class="pipeline__arrow">&rarr;</div>
+        <div class="pipeline__step">
+          <div class="pipeline__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+          <div class="pipeline__label" data-i18n="pipe_2">Clinical Data<br><small>OASIS (373 records)</small></div>
+        </div>
+        <div class="pipeline__arrow">&rarr;</div>
+        <div class="pipeline__step">
+          <div class="pipeline__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg></div>
+          <div class="pipeline__label" data-i18n="pipe_3">Processing<br><small>KNIME workflow</small></div>
+        </div>
+        <div class="pipeline__arrow">&rarr;</div>
+        <div class="pipeline__step">
+          <div class="pipeline__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17,8 12,3 7,8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+          <div class="pipeline__label" data-i18n="pipe_4">Classification<br><small>4 categories</small></div>
+        </div>
+      </div>
+
+      <!-- MRI Gallery -->
+      <h3 data-i18n="alz_gallery_title">MRI Sample Gallery</h3>
+      <div class="alz-gallery-controls">
+        <button class="view-btn view-btn--active" data-alz-cat="all" data-i18n="alz_cat_all">All</button>
+        <button class="view-btn" data-alz-cat="NonDemented" data-i18n="alz_cat_non">Non Demented</button>
+        <button class="view-btn" data-alz-cat="VeryMildDemented" data-i18n="alz_cat_vmild">Very Mild</button>
+        <button class="view-btn" data-alz-cat="MildDemented" data-i18n="alz_cat_mild">Mild</button>
+        <button class="view-btn" data-alz-cat="ModerateDemented" data-i18n="alz_cat_mod">Moderate</button>
+      </div>
+      <div class="alz-gallery" id="alzGallery"></div>
+
+      <!-- Clinical Charts -->
+      <h3 data-i18n="alz_charts_title">Clinical Data Analysis</h3>
+      <div class="alz-charts-toggle">
+        <button class="view-btn view-btn--active" data-alz-chart="dist" data-i18n="alz_chart_dist">Group Distribution</button>
+        <button class="view-btn" data-alz-chart="age" data-i18n="alz_chart_age">Age by Group</button>
+        <button class="view-btn" data-alz-chart="nwbv" data-i18n="alz_chart_nwbv">Brain Volume (nWBV)</button>
+      </div>
+      <div class="chart-wrap chart-wrap--alz">
+        <canvas id="alzChart"></canvas>
+      </div>
+    </section>
+
     <!-- LIVE DATA -->
     <section id="live" class="open-section fade-in">
       <div class="section-head">
@@ -429,7 +490,7 @@
       en: {
         brand_role: "Data Engineering \u2022 Cloud \u2022 Automation \u2022 Embedded Systems",
         nav_top: "Top", nav_highlights: "Highlights", nav_experience: "Experience",
-        nav_project: "Project", nav_live: "Live Data", nav_skills: "Skills", nav_education: "Education",
+        nav_project: "Project", nav_alzheimer: "Alzheimer", nav_live: "Live Data", nav_skills: "Skills", nav_education: "Education",
         hero_subtitle: "Computer Systems Engineer",
         hero_about: "Computer Systems Engineer with professional focus on data engineering, multi-cloud automation (Azure, AWS, GCS), orchestrated pipelines, and governance-aligned practices. Academic and applied background in embedded systems, microcontroller instrumentation, RF communication, and domotics. Experience across logistics, finance, and pharma environments.",
         highlights_title: "Highlights",
@@ -483,6 +544,15 @@
         live_fx_note: "Current rate \u2014 Open Exchange Rates API",
         view_chart: "Chart", view_map: "Map", view_table: "Table",
         th_date: "Date", th_mag: "Mag", th_location: "Location", th_depth: "Depth (km)",
+        alz_title: "Academic Project: Alzheimer's MRI Analysis",
+        alz_subtitle: "Data Mining \u2014 IPN ESCOM",
+        alz_desc: "Classification and analysis of brain MRI scans to identify patterns associated with different stages of dementia. The dataset contains 5,121 brain images across 4 categories, combined with clinical data (OASIS) including cognitive scores (MMSE), dementia rating (CDR), and brain volume measurements. Originally built with KNIME; interactive demo below.",
+        pipe_1: "MRI Images<br><small>5,121 scans</small>", pipe_2: "Clinical Data<br><small>OASIS (373 records)</small>",
+        pipe_3: "Processing<br><small>KNIME workflow</small>", pipe_4: "Classification<br><small>4 categories</small>",
+        alz_gallery_title: "MRI Sample Gallery",
+        alz_cat_all: "All", alz_cat_non: "Non Demented", alz_cat_vmild: "Very Mild", alz_cat_mild: "Mild", alz_cat_mod: "Moderate",
+        alz_charts_title: "Clinical Data Analysis",
+        alz_chart_dist: "Group Distribution", alz_chart_age: "Age by Group", alz_chart_nwbv: "Brain Volume (nWBV)",
         skills_title: "Skills",
         sk_cat1: "Data Engineering", sk_cat2: "Automation & BI",
         sk_cat3: "Orchestration, Integrations & Cloud",
@@ -517,7 +587,7 @@
       es: {
         brand_role: "Ingenier\u00eda de Datos \u2022 Cloud \u2022 Automatizaci\u00f3n \u2022 Sistemas Embebidos",
         nav_top: "Inicio", nav_highlights: "Destacados", nav_experience: "Experiencia",
-        nav_project: "Proyecto", nav_live: "Datos en Vivo", nav_skills: "Habilidades", nav_education: "Educaci\u00f3n",
+        nav_project: "Proyecto", nav_alzheimer: "Alzheimer", nav_live: "Datos en Vivo", nav_skills: "Habilidades", nav_education: "Educaci\u00f3n",
         hero_subtitle: "Ingeniero en Sistemas Computacionales",
         hero_about: "Ingeniero en Sistemas Computacionales con enfoque profesional en ingenier\u00eda de datos, automatizaci\u00f3n multi-nube (Azure, AWS, GCS), pipelines orquestados y pr\u00e1cticas alineadas a gobernanza. Formaci\u00f3n acad\u00e9mica y aplicada en sistemas embebidos, instrumentaci\u00f3n con microcontroladores, comunicaci\u00f3n por radiofrecuencia y dom\u00f3tica. Experiencia en log\u00edstica, finanzas y farmac\u00e9utica.",
         highlights_title: "Destacados",
@@ -571,6 +641,15 @@
         live_fx_note: "Tasa actual \u2014 Open Exchange Rates API",
         view_chart: "Gr\u00e1fica", view_map: "Mapa", view_table: "Tabla",
         th_date: "Fecha", th_mag: "Mag", th_location: "Ubicaci\u00f3n", th_depth: "Prof. (km)",
+        alz_title: "Proyecto Acad\u00e9mico: An\u00e1lisis de MRI para Alzheimer",
+        alz_subtitle: "Miner\u00eda de Datos \u2014 IPN ESCOM",
+        alz_desc: "Clasificaci\u00f3n y an\u00e1lisis de resonancias magn\u00e9ticas cerebrales para identificar patrones asociados con diferentes etapas de demencia. El dataset contiene 5,121 im\u00e1genes cerebrales en 4 categor\u00edas, combinadas con datos cl\u00ednicos (OASIS) incluyendo puntajes cognitivos (MMSE), calificaci\u00f3n de demencia (CDR) y mediciones de volumen cerebral. Originalmente construido con KNIME; demo interactiva a continuaci\u00f3n.",
+        pipe_1: "Im\u00e1genes MRI<br><small>5,121 escaneos</small>", pipe_2: "Datos Cl\u00ednicos<br><small>OASIS (373 registros)</small>",
+        pipe_3: "Procesamiento<br><small>Flujo KNIME</small>", pipe_4: "Clasificaci\u00f3n<br><small>4 categor\u00edas</small>",
+        alz_gallery_title: "Galer\u00eda de Muestras MRI",
+        alz_cat_all: "Todos", alz_cat_non: "Sin Demencia", alz_cat_vmild: "Muy Leve", alz_cat_mild: "Leve", alz_cat_mod: "Moderada",
+        alz_charts_title: "An\u00e1lisis de Datos Cl\u00ednicos",
+        alz_chart_dist: "Distribuci\u00f3n por Grupo", alz_chart_age: "Edad por Grupo", alz_chart_nwbv: "Volumen Cerebral (nWBV)",
         skills_title: "Habilidades",
         sk_cat1: "Ingenier\u00eda de Datos", sk_cat2: "Automatizaci\u00f3n y BI",
         sk_cat3: "Orquestaci\u00f3n, Integraciones y Cloud",
@@ -859,6 +938,137 @@
       }).catch(function () {
         document.getElementById("fxValue").textContent = "--";
         document.getElementById("fxUpdated").textContent = "Could not load exchange rate.";
+      });
+    })();
+
+    /* ── Alzheimer Gallery ── */
+    (function () {
+      var gallery = document.getElementById("alzGallery");
+      var samples = {
+        NonDemented: ["nonDem1292.jpg","nonDem2048.jpg","nonDem2161.jpg","nonDem666.jpg"],
+        VeryMildDemented: ["verymildDem1054.jpg","verymildDem1376.jpg","verymildDem1421.jpg","verymildDem195.jpg"],
+        MildDemented: ["mildDem485.jpg","mildDem49.jpg","mildDem561.jpg","mildDem570.jpg"],
+        ModerateDemented: ["moderateDem11.jpg","moderateDem23.jpg","moderateDem34.jpg","moderateDem46.jpg"]
+      };
+      var catLabels = { NonDemented: "Non Demented", VeryMildDemented: "Very Mild", MildDemented: "Mild", ModerateDemented: "Moderate" };
+
+      function render(filter) {
+        gallery.innerHTML = "";
+        Object.keys(samples).forEach(function (cat) {
+          if (filter !== "all" && filter !== cat) return;
+          samples[cat].forEach(function (file) {
+            var div = document.createElement("div");
+            div.className = "alz-thumb";
+            div.innerHTML = '<img src="assets/alzheimer/' + cat + '/' + file + '" alt="' + cat + ' MRI" loading="lazy"/>' +
+              '<span class="alz-thumb__label">' + catLabels[cat] + '</span>';
+            gallery.appendChild(div);
+          });
+        });
+      }
+
+      render("all");
+
+      document.querySelectorAll("[data-alz-cat]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          document.querySelectorAll("[data-alz-cat]").forEach(function (b) { b.classList.remove("view-btn--active"); });
+          btn.classList.add("view-btn--active");
+          render(btn.dataset.alzCat);
+        });
+      });
+    })();
+
+    /* ── Alzheimer Clinical Charts ── */
+    (function () {
+      var alzChartInstance = null;
+      var canvas = document.getElementById("alzChart");
+
+      fetch("assets/alzheimer/clinical.json").then(function (r) { return r.json(); }).then(function (data) {
+        function buildDist() {
+          var counts = {};
+          data.forEach(function (r) { counts[r.group] = (counts[r.group] || 0) + 1; });
+          return {
+            type: "doughnut",
+            data: {
+              labels: Object.keys(counts),
+              datasets: [{ data: Object.values(counts), backgroundColor: ["#78b478","#dc503c","#c8a960"], borderWidth: 0 }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: "rgba(232,228,222,.8)" } } } }
+          };
+        }
+
+        function buildAge() {
+          var groups = {};
+          data.forEach(function (r) {
+            if (!groups[r.group]) groups[r.group] = [];
+            groups[r.group].push(r.age);
+          });
+          var labels = Object.keys(groups);
+          var avgs = labels.map(function (g) { var a = groups[g]; return (a.reduce(function (s,v) { return s+v; }, 0) / a.length).toFixed(1); });
+          var mins = labels.map(function (g) { return Math.min.apply(null, groups[g]); });
+          var maxs = labels.map(function (g) { return Math.max.apply(null, groups[g]); });
+          return {
+            type: "bar",
+            data: {
+              labels: labels,
+              datasets: [
+                { label: "Avg", data: avgs, backgroundColor: "rgba(200,169,96,.7)", borderRadius: 4 },
+                { label: "Min", data: mins, backgroundColor: "rgba(120,180,120,.5)", borderRadius: 4 },
+                { label: "Max", data: maxs, backgroundColor: "rgba(220,80,60,.5)", borderRadius: 4 }
+              ]
+            },
+            options: {
+              responsive: true, maintainAspectRatio: false,
+              plugins: { legend: { labels: { color: "rgba(232,228,222,.7)" } } },
+              scales: {
+                x: { ticks: { color: "rgba(232,228,222,.5)" }, grid: { display: false } },
+                y: { ticks: { color: "rgba(232,228,222,.5)" }, grid: { color: "rgba(255,255,255,.05)" } }
+              }
+            }
+          };
+        }
+
+        function buildNwbv() {
+          var groups = {};
+          data.forEach(function (r) {
+            if (r.nwbv == null) return;
+            if (!groups[r.group]) groups[r.group] = [];
+            groups[r.group].push(r.nwbv);
+          });
+          var labels = Object.keys(groups);
+          var avgs = labels.map(function (g) { var a = groups[g]; return (a.reduce(function (s,v) { return s+v; }, 0) / a.length).toFixed(4); });
+          return {
+            type: "bar",
+            data: {
+              labels: labels,
+              datasets: [{ label: "Avg nWBV", data: avgs, backgroundColor: ["#78b478","#dc503c","#c8a960"], borderRadius: 4 }]
+            },
+            options: {
+              responsive: true, maintainAspectRatio: false,
+              plugins: { legend: { display: false } },
+              scales: {
+                x: { ticks: { color: "rgba(232,228,222,.5)" }, grid: { display: false } },
+                y: { ticks: { color: "rgba(232,228,222,.5)" }, grid: { color: "rgba(255,255,255,.05)" }, beginAtZero: false }
+              }
+            }
+          };
+        }
+
+        var builders = { dist: buildDist, age: buildAge, nwbv: buildNwbv };
+
+        function showChart(type) {
+          if (alzChartInstance) alzChartInstance.destroy();
+          alzChartInstance = new Chart(canvas, builders[type]());
+        }
+
+        showChart("dist");
+
+        document.querySelectorAll("[data-alz-chart]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            document.querySelectorAll("[data-alz-chart]").forEach(function (b) { b.classList.remove("view-btn--active"); });
+            btn.classList.add("view-btn--active");
+            showChart(btn.dataset.alzChart);
+          });
+        });
       });
     })();
   </script>
