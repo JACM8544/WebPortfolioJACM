@@ -474,6 +474,64 @@ main{
   border: 1px solid var(--stroke);
 }
 
+/* ── LIVE DATA ── */
+.live-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.live-card{
+  background: rgba(255,255,255,.02);
+  border: 1px solid var(--stroke);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.live-card h3{
+  margin: 0 0 4px 0;
+  font-size: 16px;
+}
+
+.live-note{
+  font-size: 12px;
+  margin: 0 0 14px 0;
+}
+
+.live-updated{
+  font-size: 11px;
+  margin: 10px 0 0 0;
+  text-align: right;
+}
+
+.chart-wrap{
+  position: relative;
+  height: 260px;
+}
+
+.fx-display{
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 24px 0;
+}
+
+.fx-value{
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -1px;
+}
+
+.fx-label{
+  font-size: 14px;
+  color: var(--muted);
+}
+
+@media (min-width: 900px){
+  .live-grid{ grid-template-columns: 1.4fr .6fr; }
+}
+
 /* ── SKILLS ── */
 .skills-open{
   padding: 40px 0 20px;

@@ -8,6 +8,7 @@
   <meta name="description" content="Professional portfolio: experience, skills, and projects of Jorge Armando Contreras Mercado." />
 
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js" defer></script>
 </head>
 
 <body>
@@ -27,6 +28,7 @@
         <a href="#highlights" data-i18n="nav_highlights">Highlights</a>
         <a href="#experience" data-i18n="nav_experience">Experience</a>
         <a href="#project" data-i18n="nav_project">Project</a>
+        <a href="#live" data-i18n="nav_live">Live Data</a>
         <a href="#skills" data-i18n="nav_skills">Skills</a>
         <a href="#education" data-i18n="nav_education">Education</a>
         <button class="lang-toggle" id="langToggle" aria-label="Toggle language">ES</button>
@@ -244,6 +246,33 @@
       </div>
     </section>
 
+    <!-- LIVE DATA -->
+    <section id="live" class="open-section fade-in">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="live_title">Live Data</h2>
+        <p class="muted" data-i18n="live_subtitle">Real-time public API consumption.</p>
+      </div>
+
+      <div class="live-grid">
+        <div class="live-card">
+          <h3 data-i18n="live_quakes_title">Recent Earthquakes near Mexico</h3>
+          <p class="muted live-note" data-i18n="live_quakes_note">Last 20 events, magnitude 2.5+ &mdash; USGS API</p>
+          <div class="chart-wrap"><canvas id="quakeChart"></canvas></div>
+          <p class="muted live-updated" id="quakeUpdated"></p>
+        </div>
+
+        <div class="live-card">
+          <h3 data-i18n="live_fx_title">USD / MXN Exchange Rate</h3>
+          <p class="muted live-note" data-i18n="live_fx_note">Current rate &mdash; Open Exchange Rates API</p>
+          <div class="fx-display">
+            <span class="fx-value" id="fxValue">--</span>
+            <span class="fx-label">MXN per 1 USD</span>
+          </div>
+          <p class="muted live-updated" id="fxUpdated"></p>
+        </div>
+      </div>
+    </section>
+
     <!-- SKILLS -->
     <section id="skills" class="skills-open fade-in">
       <h2 class="section-title" data-i18n="skills_title">Skills</h2>
@@ -370,7 +399,7 @@
       en: {
         brand_role: "Data Engineering \u2022 Cloud \u2022 Automation \u2022 Embedded Systems",
         nav_top: "Top", nav_highlights: "Highlights", nav_experience: "Experience",
-        nav_project: "Project", nav_skills: "Skills", nav_education: "Education",
+        nav_project: "Project", nav_live: "Live Data", nav_skills: "Skills", nav_education: "Education",
         hero_subtitle: "Computer Systems Engineer",
         hero_about: "Computer Systems Engineer with professional focus on data engineering, multi-cloud automation (Azure, AWS, GCS), orchestrated pipelines, and governance-aligned practices. Academic and applied background in embedded systems, microcontroller instrumentation, RF communication, and domotics. Experience across logistics, finance, and pharma environments.",
         highlights_title: "Highlights",
@@ -417,6 +446,11 @@
         proj_6: "Power BI dashboards for business intelligence and monitoring.",
         proj_note: "Built for a company not disclosed publicly at this time.",
         proj_chip_doc: "Document Automation",
+        live_title: "Live Data", live_subtitle: "Real-time public API consumption.",
+        live_quakes_title: "Recent Earthquakes near Mexico",
+        live_quakes_note: "Last 20 events, magnitude 2.5+ \u2014 USGS API",
+        live_fx_title: "USD / MXN Exchange Rate",
+        live_fx_note: "Current rate \u2014 Open Exchange Rates API",
         skills_title: "Skills",
         sk_cat1: "Data Engineering", sk_cat2: "Automation & BI",
         sk_cat3: "Orchestration, Integrations & Cloud",
@@ -451,7 +485,7 @@
       es: {
         brand_role: "Ingenier\u00eda de Datos \u2022 Cloud \u2022 Automatizaci\u00f3n \u2022 Sistemas Embebidos",
         nav_top: "Inicio", nav_highlights: "Destacados", nav_experience: "Experiencia",
-        nav_project: "Proyecto", nav_skills: "Habilidades", nav_education: "Educaci\u00f3n",
+        nav_project: "Proyecto", nav_live: "Datos en Vivo", nav_skills: "Habilidades", nav_education: "Educaci\u00f3n",
         hero_subtitle: "Ingeniero en Sistemas Computacionales",
         hero_about: "Ingeniero en Sistemas Computacionales con enfoque profesional en ingenier\u00eda de datos, automatizaci\u00f3n multi-nube (Azure, AWS, GCS), pipelines orquestados y pr\u00e1cticas alineadas a gobernanza. Formaci\u00f3n acad\u00e9mica y aplicada en sistemas embebidos, instrumentaci\u00f3n con microcontroladores, comunicaci\u00f3n por radiofrecuencia y dom\u00f3tica. Experiencia en log\u00edstica, finanzas y farmac\u00e9utica.",
         highlights_title: "Destacados",
@@ -498,6 +532,11 @@
         proj_6: "Dashboards de Power BI para inteligencia de negocio y monitoreo.",
         proj_note: "Construido para una empresa no divulgada p\u00fablicamente en este momento.",
         proj_chip_doc: "Automatizaci\u00f3n Documental",
+        live_title: "Datos en Vivo", live_subtitle: "Consumo de APIs p\u00fablicas en tiempo real.",
+        live_quakes_title: "Sismos Recientes cerca de M\u00e9xico",
+        live_quakes_note: "\u00daltimos 20 eventos, magnitud 2.5+ \u2014 USGS API",
+        live_fx_title: "Tipo de Cambio USD / MXN",
+        live_fx_note: "Tasa actual \u2014 Open Exchange Rates API",
         skills_title: "Habilidades",
         sk_cat1: "Ingenier\u00eda de Datos", sk_cat2: "Automatizaci\u00f3n y BI",
         sk_cat3: "Orquestaci\u00f3n, Integraciones y Cloud",
@@ -672,6 +711,76 @@
 
       var statsEl = document.querySelector(".hero__stats");
       if (statsEl) statsObserver.observe(statsEl);
+    })();
+
+    /* ── Live Data: Earthquakes ── */
+    (function () {
+      var url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&minlatitude=14&maxlatitude=33&minlongitude=-120&maxlongitude=-86&limit=20&orderby=time&minmagnitude=2.5";
+      fetch(url).then(function (r) { return r.json(); }).then(function (data) {
+        var features = data.features.reverse();
+        var labels = features.map(function (f) {
+          var d = new Date(f.properties.time);
+          return d.toLocaleDateString(currentLang === "es" ? "es-MX" : "en-US", { month: "short", day: "numeric" }) + " " + d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+        });
+        var mags = features.map(function (f) { return f.properties.mag; });
+        var colors = mags.map(function (m) {
+          return m >= 5 ? "rgba(220,80,60,.85)" : m >= 4 ? "rgba(200,169,96,.85)" : "rgba(120,180,120,.85)";
+        });
+
+        new Chart(document.getElementById("quakeChart"), {
+          type: "bar",
+          data: {
+            labels: labels,
+            datasets: [{
+              label: currentLang === "es" ? "Magnitud" : "Magnitude",
+              data: mags,
+              backgroundColor: colors,
+              borderRadius: 4
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  afterLabel: function (ctx) {
+                    var f = features[ctx.dataIndex];
+                    return f.properties.place;
+                  }
+                }
+              }
+            },
+            scales: {
+              x: { ticks: { color: "rgba(232,228,222,.5)", font: { size: 10 }, maxRotation: 45 }, grid: { display: false } },
+              y: { ticks: { color: "rgba(232,228,222,.5)" }, grid: { color: "rgba(255,255,255,.05)" }, beginAtZero: true }
+            }
+          }
+        });
+
+        var updEl = document.getElementById("quakeUpdated");
+        var now = new Date();
+        updEl.textContent = (currentLang === "es" ? "Actualizado: " : "Updated: ") +
+          now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      }).catch(function () {
+        document.getElementById("quakeUpdated").textContent = "Could not load earthquake data.";
+      });
+    })();
+
+    /* ── Live Data: Exchange Rate ── */
+    (function () {
+      fetch("https://open.er-api.com/v6/latest/USD").then(function (r) { return r.json(); }).then(function (data) {
+        var rate = data.rates.MXN;
+        document.getElementById("fxValue").textContent = rate.toFixed(2);
+        var updEl = document.getElementById("fxUpdated");
+        var now = new Date();
+        updEl.textContent = (currentLang === "es" ? "Actualizado: " : "Updated: ") +
+          now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      }).catch(function () {
+        document.getElementById("fxValue").textContent = "--";
+        document.getElementById("fxUpdated").textContent = "Could not load exchange rate.";
+      });
     })();
   </script>
 </body>

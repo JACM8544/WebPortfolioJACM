@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV — Jorge Armando Contreras Mercado</title>
+  <style>
+    @page { size: letter; margin: 0.6in 0.7in; }
+
+    *{ box-sizing: border-box; margin: 0; padding: 0; }
+
+    body{
+      font-family: "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: #1a1a1a;
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.6in 0.7in;
+    }
+
+    a{ color: #1a1a1a; text-decoration: none; }
+
+    /* Header */
+    .cv-header{ text-align: center; margin-bottom: 18pt; }
+    .cv-name{ font-size: 20pt; font-weight: 700; letter-spacing: .3px; margin-bottom: 4pt; }
+    .cv-contact{ font-size: 9pt; color: #444; }
+    .cv-contact span + span::before{ content: " | "; color: #999; }
+
+    /* Section */
+    .cv-section{ margin-bottom: 14pt; }
+    .cv-section-title{
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      border-bottom: 1.5pt solid #1a1a1a;
+      padding-bottom: 3pt;
+      margin-bottom: 8pt;
+    }
+
+    /* Entry */
+    .cv-entry{ margin-bottom: 10pt; }
+    .cv-entry-head{
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .cv-entry-title{ font-weight: 700; font-size: 10.5pt; }
+    .cv-entry-date{ font-size: 9.5pt; color: #555; white-space: nowrap; }
+    .cv-entry-sub{ color: #444; font-style: italic; font-size: 10pt; margin-top: 1pt; }
+    .cv-entry ul{ margin: 4pt 0 0 16pt; }
+    .cv-entry li{ margin-bottom: 2pt; }
+
+    /* Skills grid */
+    .cv-skills{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4pt 20pt;
+    }
+    .cv-skill-cat{ font-weight: 700; font-size: 10pt; }
+    .cv-skill-list{ font-size: 10pt; color: #333; }
+
+    /* Print */
+    @media print{
+      body{ padding: 0; }
+      .no-print{ display: none; }
+    }
+
+    /* Print button (screen only) */
+    .print-btn{
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      padding: 10px 20px;
+      background: #1a1a1a;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .print-btn:hover{ background: #333; }
+  </style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">Print / Save PDF</button>
+
+<div class="cv-header">
+  <div class="cv-name">Jorge Armando Contreras Mercado</div>
+  <div class="cv-contact">
+    <span>Mexico City, Mexico</span>
+    <span>jorarconmer@gmail.com</span>
+    <span>linkedin.com/in/jacm8544</span>
+    <span>github.com/JACM8544</span>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="cv-section">
+  <div class="cv-section-title">Professional Summary</div>
+  <p>
+    Computer Systems Engineer with professional focus on data engineering, multi-cloud automation (Azure, AWS, Google Cloud),
+    orchestrated data pipelines, and governance-aligned practices. Applied background in embedded systems, microcontroller
+    instrumentation, RF communication, and domotics. Experience across logistics, finance, and pharmaceutical industries.
+  </p>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="cv-section">
+  <div class="cv-section-title">Professional Experience</div>
+
+  <div class="cv-entry">
+    <div class="cv-entry-head">
+      <span class="cv-entry-title">Data Engineer &mdash; Laboratorios Silanes</span>
+      <span class="cv-entry-date">Apr 2025 &ndash; Present</span>
+    </div>
+    <div class="cv-entry-sub">Pharmaceutical industry &mdash; Mexico City</div>
+    <ul>
+      <li>Develop SQL queries to support multiple business areas and operational needs.</li>
+      <li>Normalize and standardize data to enable a Data Lake platform; apply DAMA-aligned governance and ISO-inspired guidelines.</li>
+      <li>Build data catalogs to improve normalization, discoverability, and consumption.</li>
+      <li>Build process automations using Microsoft Power Automate.</li>
+      <li>Operate Airflow pipelines for scheduled data refresh across analytics platforms (including WHIZ AI).</li>
+      <li>Automate end-to-end file workflows on BOX via its API, deploying on AWS Lambda and Azure Functions.</li>
+      <li>Build data pipelines in Google Cloud with SharePoint integrations for Excel/CSV ingestion, materializing tables from bronze (raw) to gold (consumption) layers.</li>
+      <li>Multi-cloud operations across Azure, AWS, and GCS through console and programmatic integrations.</li>
+    </ul>
+  </div>
+
+  <div class="cv-entry">
+    <div class="cv-entry-head">
+      <span class="cv-entry-title">Data Scientist &mdash; Algorithia</span>
+      <span class="cv-entry-date">Jun 2024 &ndash; Sep 2024</span>
+    </div>
+    <div class="cv-entry-sub">Credit & Collections &mdash; Mexico City</div>
+    <ul>
+      <li>Designed data schemas to optimize internal credit and billing processes for Banco Azteca.</li>
+      <li>Weekly monitoring of credit portfolios and billing metrics.</li>
+      <li>Implemented Salesforce data integrations and efficient ETL workflows.</li>
+    </ul>
+  </div>
+
+  <div class="cv-entry">
+    <div class="cv-entry-head">
+      <span class="cv-entry-title">Software Engineer &mdash; Netlogistik</span>
+      <span class="cv-entry-date">Apr 2023 &ndash; Apr 2024</span>
+    </div>
+    <div class="cv-entry-sub">WMS (Blue Yonder) & Integrations &mdash; Mexico City</div>
+    <ul>
+      <li>Developed and maintained legacy solutions around Blue Yonder WMS for enterprise clients (Soriana, Farmacias Guadalajara, DHL, Volkswagen).</li>
+      <li>Built mobile and RF screens integrating SQL, Java, Groovy, and C#.</li>
+      <li>Designed wrappers/triggers for client-specific workflows; participated in SAP integrations.</li>
+      <li>Performed pre-go-live testing, diagnosis, and resolution of critical issues.</li>
+      <li>Improved security by identifying SQL injection risks and correcting data type vulnerabilities.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- FEATURED PROJECT -->
+<div class="cv-section">
+  <div class="cv-section-title">Featured Project</div>
+  <div class="cv-entry">
+    <div class="cv-entry-head">
+      <span class="cv-entry-title">Procurement & Bidding Intelligence Platform</span>
+      <span class="cv-entry-date">~1 year (parallel)</span>
+    </div>
+    <div class="cv-entry-sub">End-to-end system for pharma supply bidding processes</div>
+    <ul>
+      <li>Web scraping for public bidding data; extraction of structured/unstructured data into consolidated ZIP packages.</li>
+      <li>Database modeling, Power Apps front-end, document automation, and Power BI dashboards.</li>
+      <li>Stack: Python, SQL, Web Scraping, Data Modeling, Power Apps, Power BI.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="cv-section">
+  <div class="cv-section-title">Technical Skills</div>
+  <div class="cv-skills">
+    <div>
+      <span class="cv-skill-cat">Languages: </span>
+      <span class="cv-skill-list">Python, SQL, Java, C, C++, VHDL, Assembly (Microchip PIC)</span>
+    </div>
+    <div>
+      <span class="cv-skill-cat">Data Engineering: </span>
+      <span class="cv-skill-list">ETL/ELT, Data Modeling, Database Design, Data Quality</span>
+    </div>
+    <div>
+      <span class="cv-skill-cat">Cloud & Orchestration: </span>
+      <span class="cv-skill-list">Azure Functions, AWS Lambda, Google Cloud, Airflow, SharePoint</span>
+    </div>
+    <div>
+      <span class="cv-skill-cat">Automation & BI: </span>
+      <span class="cv-skill-list">Power Apps, Power Automate, Power BI, BOX API, Web Scraping</span>
+    </div>
+    <div>
+      <span class="cv-skill-cat">Integrations: </span>
+      <span class="cv-skill-list">SAP, WMS Blue Yonder, Salesforce</span>
+    </div>
+    <div>
+      <span class="cv-skill-cat">Embedded & IoT: </span>
+      <span class="cv-skill-list">Instrumentation, Microcontrollers, RF, Domotics, UART</span>
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="cv-section">
+  <div class="cv-section-title">Education</div>
+
+  <div class="cv-entry">
+    <div class="cv-entry-head">
+      <span class="cv-entry-title">Computer Systems Engineering</span>
+      <span class="cv-entry-date">2017 &ndash; 2022</span>
+    </div>
+    <div class="cv-entry-sub">Instituto Polit&eacute;cnico Nacional (IPN) &mdash; ESCOM</div>
+    <ul>
+      <li>Relevant coursework: Data Mining, Image Analysis, Signals Theory, Operating Systems, Microcontrollers, Data Governance.</li>
+      <li>Applied project: image-based grouping over brain images for Alzheimer's prediction using data mining techniques.</li>
+    </ul>
+  </div>
+
+  <div class="cv-entry">
+    <div class="cv-entry-head">
+      <span class="cv-entry-title">Industrial Processes (Technical Degree)</span>
+      <span class="cv-entry-date">2014 &ndash; 2017</span>
+    </div>
+    <div class="cv-entry-sub">Instituto Polit&eacute;cnico Nacional (IPN)</div>
+    <ul>
+      <li>Focus: Metrology, machine tools, CNC programming, welding.</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
