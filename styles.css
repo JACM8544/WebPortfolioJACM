@@ -213,7 +213,10 @@ main{
   margin: 0 0 12px 0;
   color: var(--muted);
   font-size: 13px;
+  line-height: 1.9;
 }
+
+.hero__meta a{ word-break: break-word; }
 
 .cv-btn{
   display: inline-block;
@@ -982,5 +985,114 @@ main{
   .hero__grid{ grid-template-columns: 1fr; text-align: center; }
   .hero__photo{ max-width: 220px; margin: 0 auto; }
   .hero__about{ margin-left: auto; margin-right: auto; }
-  .hero__stats{ justify-content: center; flex-wrap: wrap; }
+  .hero__stats{ justify-content: center; flex-wrap: wrap; gap: 18px; }
+  .hero__meta{ word-break: break-word; }
 }
+
+/* ── Mobile (<= 700px) ── */
+@media (max-width: 700px){
+  .container{ width: calc(100% - 24px); }
+
+  main{ padding: 90px 0 40px; }
+
+  /* Hero stats: 2x2 grid for 4 items */
+  .hero__stats{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding-top: 14px;
+  }
+  .stat__number{ font-size: 24px; }
+  .stat__plus{ font-size: 16px; }
+  .stat__label{ font-size: 10px; }
+
+  /* Section spacing */
+  .open-section{ padding: 28px 0 12px; }
+  .project-section{ padding: 28px 0 12px; }
+  .skills-open{ padding: 28px 0 12px; }
+  .education-open{ padding: 28px 0 12px; }
+
+  /* Demos container - tighter padding */
+  .demos-container{ padding: 16px; margin: 28px 0 16px; }
+
+  /* Pipeline: stack vertically with vertical arrows */
+  .pipeline{ flex-direction: column; gap: 6px; }
+  .pipeline__step{ width: 100%; max-width: 240px; min-width: 0; padding: 10px 12px; }
+  .pipeline__arrow{ transform: rotate(90deg); }
+
+  /* Project card */
+  .project-card{ padding: 18px; }
+
+  /* Live cards */
+  .live-card{ padding: 16px; }
+  .live-card h3{ font-size: 15px; }
+
+  /* Carousel: smaller padding */
+  .carousel__content{ padding: 20px 8px; }
+  .carousel__title{ font-size: 17px; }
+  .carousel__text{ font-size: 13px; }
+
+  /* Timeline */
+  .timeline-open{ padding-left: 22px; }
+  .tl-item::before{ left: -19px; width: 10px; height: 10px; }
+  .timeline-open::before{ left: 4px; }
+  .tl-head{ gap: 8px; }
+  .tl-item li{ font-size: 13px; }
+
+  /* Charts: shorter on mobile */
+  .chart-wrap{ height: 240px; }
+  .chart-wrap--alz{ height: 240px; }
+
+  /* Quake map height when stacked */
+  .quake-right{ min-height: 240px; }
+
+  /* fx display */
+  .fx-value{ font-size: 36px; }
+  .fx-display{ padding: 16px 0; }
+
+  /* Tables */
+  .quake-table{ font-size: 12px; }
+  .quake-table th,
+  .quake-table td{ padding: 6px 8px; }
+  .table-wrap{ max-height: 280px; }
+
+  /* Alzheimer gallery: smaller thumbs */
+  .alz-gallery{
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+  }
+
+  /* Better touch targets for chips and view buttons */
+  .chip{ padding: 8px 12px; font-size: 13px; }
+  .view-btn{ padding: 7px 12px; font-size: 12px; }
+  .nav--premium a{ padding: 10px 12px; }
+
+  /* Section titles */
+  .section-title{ font-size: 17px; }
+  .demo-block__title{ font-size: 15px; }
+  .alz-desc{ font-size: 13px; }
+
+  /* Edu items */
+  .edu-item h3{ font-size: 15px; }
+  .edu-item li{ font-size: 13px; }
+
+  /* Header brand role hidden on very small screens to save space */
+  .brand__role{ font-size: 11px; }
+}
+
+@media (max-width: 420px){
+  .brand__name{ font-size: 14px; }
+  .brand__role{ display: none; }
+
+  /* Hero stats single column on tiny screens */
+  .hero__stats{ grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat__number{ font-size: 22px; }
+
+  /* Hide some chart-only labels for compactness */
+  .alz-charts-toggle .view-btn,
+  .alz-gallery-controls .view-btn{ padding: 6px 10px; font-size: 11px; }
+}
+
+/* Ensure no horizontal overflow */
+html, body{ max-width: 100%; overflow-x: hidden; }
+img, canvas{ max-width: 100%; }
