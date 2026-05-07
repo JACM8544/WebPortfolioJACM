@@ -30,8 +30,7 @@
         <a href="#highlights" data-i18n="nav_highlights">Highlights</a>
         <a href="#experience" data-i18n="nav_experience">Experience</a>
         <a href="#project" data-i18n="nav_project">Project</a>
-        <a href="#alzheimer" data-i18n="nav_alzheimer">Alzheimer</a>
-        <a href="#live" data-i18n="nav_live">Live Data</a>
+        <a href="#alzheimer" data-i18n="nav_demos">Demos</a>
         <a href="#skills" data-i18n="nav_skills">Skills</a>
         <a href="#education" data-i18n="nav_education">Education</a>
         <button class="lang-toggle" id="langToggle" aria-label="Toggle language">ES</button>
@@ -249,10 +248,17 @@
       </div>
     </section>
 
+    <!-- INTERACTIVE DEMOS -->
+    <div class="demos-container fade-in">
+      <div class="demos-header">
+        <h2 class="section-title" data-i18n="demos_title">Interactive Demos</h2>
+        <p class="muted" data-i18n="demos_subtitle">Live data consumption and academic project showcases.</p>
+      </div>
+
     <!-- ALZHEIMER PROJECT -->
-    <section id="alzheimer" class="open-section fade-in">
+    <section id="alzheimer" class="demo-block">
       <div class="section-head">
-        <h2 class="section-title" data-i18n="alz_title">Academic Project: Alzheimer's MRI Analysis</h2>
+        <h2 class="demo-block__title" data-i18n="alz_title">Academic Project: Alzheimer's MRI Analysis</h2>
         <p class="muted" data-i18n="alz_subtitle">Data Mining &mdash; IPN ESCOM</p>
       </div>
 
@@ -307,50 +313,58 @@
       <div class="chart-wrap chart-wrap--alz">
         <canvas id="alzChart"></canvas>
       </div>
+
+      <p class="source-link">
+        <span data-i18n="alz_source">Dataset source:</span>
+        <a href="https://www.kaggle.com/datasets/uraninjo/augmented-alzheimer-mri-dataset" target="_blank" rel="noreferrer">Kaggle &mdash; Augmented Alzheimer MRI Dataset</a>
+      </p>
     </section>
 
     <!-- LIVE DATA -->
-    <section id="live" class="open-section fade-in">
+    <section id="live" class="demo-block">
       <div class="section-head">
-        <h2 class="section-title" data-i18n="live_title">Live Data</h2>
+        <h2 class="demo-block__title" data-i18n="live_title">Live Data</h2>
         <p class="muted" data-i18n="live_subtitle">Real-time public API consumption.</p>
       </div>
 
       <div class="live-card live-card--full">
-        <div class="live-card__head">
-          <div>
-            <h3 data-i18n="live_quakes_title">Recent Earthquakes near Mexico</h3>
-            <p class="muted live-note" data-i18n="live_quakes_note">Last 20 events, magnitude 2.5+ &mdash; USGS API</p>
-          </div>
-          <div class="view-toggles">
-            <button class="view-btn view-btn--active" data-view="chart" data-i18n="view_chart">Chart</button>
-            <button class="view-btn" data-view="map" data-i18n="view_map">Map</button>
-            <button class="view-btn" data-view="table" data-i18n="view_table">Table</button>
-          </div>
-        </div>
+        <h3 data-i18n="live_quakes_title">Recent Earthquakes near Mexico</h3>
+        <p class="muted live-note" data-i18n="live_quakes_note">Last 20 events, magnitude 2.5+ &mdash; USGS API</p>
 
-        <div class="live-view" id="viewChart">
-          <div class="chart-wrap"><canvas id="quakeChart"></canvas></div>
-        </div>
-        <div class="live-view live-view--hidden" id="viewMap">
-          <div id="quakeMap" style="height:360px;border-radius:12px;"></div>
-        </div>
-        <div class="live-view live-view--hidden" id="viewTable">
-          <div class="table-wrap">
-            <table class="quake-table" id="quakeTable">
-              <thead>
-                <tr>
-                  <th data-i18n="th_date">Date</th>
-                  <th data-i18n="th_mag">Mag</th>
-                  <th data-i18n="th_location">Location</th>
-                  <th data-i18n="th_depth">Depth (km)</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
+        <div class="quake-layout">
+          <div class="quake-left">
+            <div class="view-toggles" style="margin-bottom:10px;">
+              <button class="view-btn view-btn--active" data-view="chart" data-i18n="view_chart">Chart</button>
+              <button class="view-btn" data-view="table" data-i18n="view_table">Table</button>
+            </div>
+            <div class="live-view" id="viewChart">
+              <div class="chart-wrap"><canvas id="quakeChart"></canvas></div>
+            </div>
+            <div class="live-view live-view--hidden" id="viewTable">
+              <div class="table-wrap">
+                <table class="quake-table" id="quakeTable">
+                  <thead>
+                    <tr>
+                      <th data-i18n="th_date">Date</th>
+                      <th data-i18n="th_mag">Mag</th>
+                      <th data-i18n="th_location">Location</th>
+                      <th data-i18n="th_depth">Depth (km)</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="quake-right">
+            <div id="quakeMap" style="height:100%;min-height:300px;border-radius:12px;"></div>
           </div>
         </div>
         <p class="muted live-updated" id="quakeUpdated"></p>
+        <p class="source-link">
+          <span data-i18n="quake_source">Source:</span>
+          <a href="https://earthquake.usgs.gov/fdsnws/event/1/" target="_blank" rel="noreferrer">USGS Earthquake Hazards Program API</a>
+        </p>
       </div>
 
       <div class="live-card">
@@ -361,8 +375,14 @@
           <span class="fx-label">MXN per 1 USD</span>
         </div>
         <p class="muted live-updated" id="fxUpdated"></p>
+        <p class="source-link">
+          <span data-i18n="fx_source">Source:</span>
+          <a href="https://open.er-api.com/" target="_blank" rel="noreferrer">Open Exchange Rates API</a>
+        </p>
       </div>
     </section>
+
+    </div><!-- end demos-container -->
 
     <!-- SKILLS -->
     <section id="skills" class="skills-open fade-in">
@@ -490,7 +510,7 @@
       en: {
         brand_role: "Data Engineering \u2022 Cloud \u2022 Automation \u2022 Embedded Systems",
         nav_top: "Top", nav_highlights: "Highlights", nav_experience: "Experience",
-        nav_project: "Project", nav_alzheimer: "Alzheimer", nav_live: "Live Data", nav_skills: "Skills", nav_education: "Education",
+        nav_project: "Project", nav_demos: "Demos", nav_skills: "Skills", nav_education: "Education",
         hero_subtitle: "Computer Systems Engineer",
         hero_about: "Computer Systems Engineer with professional focus on data engineering, multi-cloud automation (Azure, AWS, GCS), orchestrated pipelines, and governance-aligned practices. Academic and applied background in embedded systems, microcontroller instrumentation, RF communication, and domotics. Experience across logistics, finance, and pharma environments.",
         highlights_title: "Highlights",
@@ -542,7 +562,9 @@
         live_quakes_note: "Last 20 events, magnitude 2.5+ \u2014 USGS API",
         live_fx_title: "USD / MXN Exchange Rate",
         live_fx_note: "Current rate \u2014 Open Exchange Rates API",
-        view_chart: "Chart", view_map: "Map", view_table: "Table",
+        demos_title: "Interactive Demos", demos_subtitle: "Live data consumption and academic project showcases.",
+        view_chart: "Chart", view_table: "Table",
+        alz_source: "Dataset source:", quake_source: "Source:", fx_source: "Source:",
         th_date: "Date", th_mag: "Mag", th_location: "Location", th_depth: "Depth (km)",
         alz_title: "Academic Project: Alzheimer's MRI Analysis",
         alz_subtitle: "Data Mining \u2014 IPN ESCOM",
@@ -587,7 +609,7 @@
       es: {
         brand_role: "Ingenier\u00eda de Datos \u2022 Cloud \u2022 Automatizaci\u00f3n \u2022 Sistemas Embebidos",
         nav_top: "Inicio", nav_highlights: "Destacados", nav_experience: "Experiencia",
-        nav_project: "Proyecto", nav_alzheimer: "Alzheimer", nav_live: "Datos en Vivo", nav_skills: "Habilidades", nav_education: "Educaci\u00f3n",
+        nav_project: "Proyecto", nav_demos: "Demos", nav_skills: "Habilidades", nav_education: "Educaci\u00f3n",
         hero_subtitle: "Ingeniero en Sistemas Computacionales",
         hero_about: "Ingeniero en Sistemas Computacionales con enfoque profesional en ingenier\u00eda de datos, automatizaci\u00f3n multi-nube (Azure, AWS, GCS), pipelines orquestados y pr\u00e1cticas alineadas a gobernanza. Formaci\u00f3n acad\u00e9mica y aplicada en sistemas embebidos, instrumentaci\u00f3n con microcontroladores, comunicaci\u00f3n por radiofrecuencia y dom\u00f3tica. Experiencia en log\u00edstica, finanzas y farmac\u00e9utica.",
         highlights_title: "Destacados",
@@ -639,7 +661,9 @@
         live_quakes_note: "\u00daltimos 20 eventos, magnitud 2.5+ \u2014 USGS API",
         live_fx_title: "Tipo de Cambio USD / MXN",
         live_fx_note: "Tasa actual \u2014 Open Exchange Rates API",
-        view_chart: "Gr\u00e1fica", view_map: "Mapa", view_table: "Tabla",
+        demos_title: "Demos Interactivos", demos_subtitle: "Consumo de datos en vivo y proyectos acad\u00e9micos.",
+        view_chart: "Gr\u00e1fica", view_table: "Tabla",
+        alz_source: "Fuente del dataset:", quake_source: "Fuente:", fx_source: "Fuente:",
         th_date: "Fecha", th_mag: "Mag", th_location: "Ubicaci\u00f3n", th_depth: "Prof. (km)",
         alz_title: "Proyecto Acad\u00e9mico: An\u00e1lisis de MRI para Alzheimer",
         alz_subtitle: "Miner\u00eda de Datos \u2014 IPN ESCOM",
@@ -826,23 +850,16 @@
       if (statsEl) statsObserver.observe(statsEl);
     })();
 
-    /* ── View toggle ── */
+    /* ── Quake view toggle (chart/table) ── */
     (function () {
-      var btns = document.querySelectorAll(".view-btn");
-      var mapInit = false;
-
+      var btns = document.querySelectorAll("[data-view]");
       btns.forEach(function (btn) {
         btn.addEventListener("click", function () {
           btns.forEach(function (b) { b.classList.remove("view-btn--active"); });
           btn.classList.add("view-btn--active");
           var view = btn.dataset.view;
           document.getElementById("viewChart").classList.toggle("live-view--hidden", view !== "chart");
-          document.getElementById("viewMap").classList.toggle("live-view--hidden", view !== "map");
           document.getElementById("viewTable").classList.toggle("live-view--hidden", view !== "table");
-          if (view === "map" && !mapInit && window._quakeMap) {
-            window._quakeMap.invalidateSize();
-            mapInit = true;
-          }
         });
       });
     })();

@@ -474,6 +474,46 @@ main{
   border: 1px solid var(--stroke);
 }
 
+/* ── DEMOS CONTAINER ── */
+.demos-container{
+  margin: 40px 0 20px;
+  padding: 24px;
+  border: 1px solid var(--accent-glow);
+  border-radius: 22px;
+  background: rgba(200,169,96,.02);
+}
+
+.demos-header{
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--stroke);
+}
+
+.demos-header .section-title{ margin-bottom: 4px; }
+.demos-header .muted{ margin: 0; font-size: 13px; }
+
+.demo-block{
+  padding: 20px 0;
+  border-bottom: 1px solid var(--stroke);
+}
+
+.demo-block:last-child{ border-bottom: none; }
+
+.demo-block__title{
+  font-size: 16px;
+  font-weight: 750;
+  letter-spacing: .2px;
+  margin: 0;
+}
+
+.source-link{
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.source-link a{ font-size: 11px; }
+
 /* ── ALZHEIMER PROJECT ── */
 .alz-desc{
   color: rgba(232,228,222,.82);
@@ -647,6 +687,27 @@ main{
 }
 
 .live-view--hidden{ display: none; }
+
+/* Quake split layout */
+.quake-layout{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.quake-right{
+  min-height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--stroke);
+}
+
+@media (min-width: 900px){
+  .quake-layout{
+    grid-template-columns: 2fr 1fr;
+  }
+  .quake-right{ min-height: 340px; }
+}
 
 .chart-wrap{
   position: relative;
