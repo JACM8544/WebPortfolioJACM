@@ -475,17 +475,23 @@ main{
 }
 
 /* ── LIVE DATA ── */
-.live-grid{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
-
 .live-card{
   background: rgba(255,255,255,.02);
   border: 1px solid var(--stroke);
   border-radius: 20px;
   padding: 20px;
+  margin-bottom: 16px;
+}
+
+.live-card--full{ margin-bottom: 16px; }
+
+.live-card__head{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
 }
 
 .live-card h3{
@@ -495,7 +501,7 @@ main{
 
 .live-note{
   font-size: 12px;
-  margin: 0 0 14px 0;
+  margin: 0;
 }
 
 .live-updated{
@@ -504,10 +510,86 @@ main{
   text-align: right;
 }
 
+/* View toggles */
+.view-toggles{
+  display: flex;
+  gap: 6px;
+}
+
+.view-btn{
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.04);
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color .25s, background .25s, color .25s;
+}
+
+.view-btn--active{
+  border-color: var(--accent-glow);
+  background: var(--accent-light);
+  color: var(--text);
+}
+
+.view-btn:hover{
+  border-color: var(--accent-glow);
+}
+
+.live-view--hidden{ display: none; }
+
 .chart-wrap{
   position: relative;
-  height: 260px;
+  height: 320px;
 }
+
+/* Table */
+.table-wrap{
+  overflow-x: auto;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.quake-table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.quake-table th{
+  text-align: left;
+  padding: 8px 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--stroke);
+  position: sticky;
+  top: 0;
+  background: rgba(11,11,11,.95);
+}
+
+.quake-table td{
+  padding: 7px 10px;
+  color: rgba(232,228,222,.82);
+  border-bottom: 1px solid rgba(255,255,255,.03);
+}
+
+.quake-table tbody tr:hover{
+  background: rgba(200,169,96,.05);
+}
+
+/* Leaflet dark overrides */
+#quakeMap{ background: #0b0b0b; }
+.leaflet-popup-content-wrapper{
+  background: rgba(11,11,11,.92) !important;
+  color: var(--text) !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--stroke) !important;
+  font-size: 12px;
+}
+.leaflet-popup-tip{ background: rgba(11,11,11,.92) !important; }
 
 .fx-display{
   display: flex;
@@ -529,7 +611,6 @@ main{
 }
 
 @media (min-width: 900px){
-  .live-grid{ grid-template-columns: 1.4fr .6fr; }
 }
 
 /* ── SKILLS ── */

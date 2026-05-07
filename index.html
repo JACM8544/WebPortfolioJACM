@@ -8,7 +8,9 @@
   <meta name="description" content="Professional portfolio: experience, skills, and projects of Jorge Armando Contreras Mercado." />
 
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9/dist/leaflet.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js" defer></script>
+  <script src="https://unpkg.com/leaflet@1.9/dist/leaflet.js" defer></script>
 </head>
 
 <body>
@@ -253,23 +255,51 @@
         <p class="muted" data-i18n="live_subtitle">Real-time public API consumption.</p>
       </div>
 
-      <div class="live-grid">
-        <div class="live-card">
-          <h3 data-i18n="live_quakes_title">Recent Earthquakes near Mexico</h3>
-          <p class="muted live-note" data-i18n="live_quakes_note">Last 20 events, magnitude 2.5+ &mdash; USGS API</p>
-          <div class="chart-wrap"><canvas id="quakeChart"></canvas></div>
-          <p class="muted live-updated" id="quakeUpdated"></p>
+      <div class="live-card live-card--full">
+        <div class="live-card__head">
+          <div>
+            <h3 data-i18n="live_quakes_title">Recent Earthquakes near Mexico</h3>
+            <p class="muted live-note" data-i18n="live_quakes_note">Last 20 events, magnitude 2.5+ &mdash; USGS API</p>
+          </div>
+          <div class="view-toggles">
+            <button class="view-btn view-btn--active" data-view="chart" data-i18n="view_chart">Chart</button>
+            <button class="view-btn" data-view="map" data-i18n="view_map">Map</button>
+            <button class="view-btn" data-view="table" data-i18n="view_table">Table</button>
+          </div>
         </div>
 
-        <div class="live-card">
-          <h3 data-i18n="live_fx_title">USD / MXN Exchange Rate</h3>
-          <p class="muted live-note" data-i18n="live_fx_note">Current rate &mdash; Open Exchange Rates API</p>
-          <div class="fx-display">
-            <span class="fx-value" id="fxValue">--</span>
-            <span class="fx-label">MXN per 1 USD</span>
-          </div>
-          <p class="muted live-updated" id="fxUpdated"></p>
+        <div class="live-view" id="viewChart">
+          <div class="chart-wrap"><canvas id="quakeChart"></canvas></div>
         </div>
+        <div class="live-view live-view--hidden" id="viewMap">
+          <div id="quakeMap" style="height:360px;border-radius:12px;"></div>
+        </div>
+        <div class="live-view live-view--hidden" id="viewTable">
+          <div class="table-wrap">
+            <table class="quake-table" id="quakeTable">
+              <thead>
+                <tr>
+                  <th data-i18n="th_date">Date</th>
+                  <th data-i18n="th_mag">Mag</th>
+                  <th data-i18n="th_location">Location</th>
+                  <th data-i18n="th_depth">Depth (km)</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <p class="muted live-updated" id="quakeUpdated"></p>
+      </div>
+
+      <div class="live-card">
+        <h3 data-i18n="live_fx_title">USD / MXN Exchange Rate</h3>
+        <p class="muted live-note" data-i18n="live_fx_note">Current rate &mdash; Open Exchange Rates API</p>
+        <div class="fx-display">
+          <span class="fx-value" id="fxValue">--</span>
+          <span class="fx-label">MXN per 1 USD</span>
+        </div>
+        <p class="muted live-updated" id="fxUpdated"></p>
       </div>
     </section>
 
@@ -451,6 +481,8 @@
         live_quakes_note: "Last 20 events, magnitude 2.5+ \u2014 USGS API",
         live_fx_title: "USD / MXN Exchange Rate",
         live_fx_note: "Current rate \u2014 Open Exchange Rates API",
+        view_chart: "Chart", view_map: "Map", view_table: "Table",
+        th_date: "Date", th_mag: "Mag", th_location: "Location", th_depth: "Depth (km)",
         skills_title: "Skills",
         sk_cat1: "Data Engineering", sk_cat2: "Automation & BI",
         sk_cat3: "Orchestration, Integrations & Cloud",
@@ -537,6 +569,8 @@
         live_quakes_note: "\u00daltimos 20 eventos, magnitud 2.5+ \u2014 USGS API",
         live_fx_title: "Tipo de Cambio USD / MXN",
         live_fx_note: "Tasa actual \u2014 Open Exchange Rates API",
+        view_chart: "Gr\u00e1fica", view_map: "Mapa", view_table: "Tabla",
+        th_date: "Fecha", th_mag: "Mag", th_location: "Ubicaci\u00f3n", th_depth: "Prof. (km)",
         skills_title: "Habilidades",
         sk_cat1: "Ingenier\u00eda de Datos", sk_cat2: "Automatizaci\u00f3n y BI",
         sk_cat3: "Orquestaci\u00f3n, Integraciones y Cloud",
@@ -713,44 +747,57 @@
       if (statsEl) statsObserver.observe(statsEl);
     })();
 
+    /* ── View toggle ── */
+    (function () {
+      var btns = document.querySelectorAll(".view-btn");
+      var mapInit = false;
+
+      btns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          btns.forEach(function (b) { b.classList.remove("view-btn--active"); });
+          btn.classList.add("view-btn--active");
+          var view = btn.dataset.view;
+          document.getElementById("viewChart").classList.toggle("live-view--hidden", view !== "chart");
+          document.getElementById("viewMap").classList.toggle("live-view--hidden", view !== "map");
+          document.getElementById("viewTable").classList.toggle("live-view--hidden", view !== "table");
+          if (view === "map" && !mapInit && window._quakeMap) {
+            window._quakeMap.invalidateSize();
+            mapInit = true;
+          }
+        });
+      });
+    })();
+
     /* ── Live Data: Earthquakes ── */
     (function () {
       var url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&minlatitude=14&maxlatitude=33&minlongitude=-120&maxlongitude=-86&limit=20&orderby=time&minmagnitude=2.5";
       fetch(url).then(function (r) { return r.json(); }).then(function (data) {
         var features = data.features.reverse();
+        var locale = currentLang === "es" ? "es-MX" : "en-US";
+
         var labels = features.map(function (f) {
           var d = new Date(f.properties.time);
-          return d.toLocaleDateString(currentLang === "es" ? "es-MX" : "en-US", { month: "short", day: "numeric" }) + " " + d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+          return d.toLocaleDateString(locale, { month: "short", day: "numeric" }) + " " + d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
         });
         var mags = features.map(function (f) { return f.properties.mag; });
         var colors = mags.map(function (m) {
           return m >= 5 ? "rgba(220,80,60,.85)" : m >= 4 ? "rgba(200,169,96,.85)" : "rgba(120,180,120,.85)";
         });
 
+        /* Chart */
         new Chart(document.getElementById("quakeChart"), {
           type: "bar",
           data: {
             labels: labels,
             datasets: [{
               label: currentLang === "es" ? "Magnitud" : "Magnitude",
-              data: mags,
-              backgroundColor: colors,
-              borderRadius: 4
+              data: mags, backgroundColor: colors, borderRadius: 4
             }]
           },
           options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-              legend: { display: false },
-              tooltip: {
-                callbacks: {
-                  afterLabel: function (ctx) {
-                    var f = features[ctx.dataIndex];
-                    return f.properties.place;
-                  }
-                }
-              }
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { display: false },
+              tooltip: { callbacks: { afterLabel: function (ctx) { return features[ctx.dataIndex].properties.place; } } }
             },
             scales: {
               x: { ticks: { color: "rgba(232,228,222,.5)", font: { size: 10 }, maxRotation: 45 }, grid: { display: false } },
@@ -759,10 +806,42 @@
           }
         });
 
+        /* Map */
+        var map = L.map("quakeMap", { scrollWheelZoom: false }).setView([23.5, -102], 5);
+        L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+          attribution: "&copy; OpenStreetMap &copy; CARTO", maxZoom: 12
+        }).addTo(map);
+
+        features.forEach(function (f) {
+          var coords = f.geometry.coordinates;
+          var mag = f.properties.mag;
+          var color = mag >= 5 ? "#dc503c" : mag >= 4 ? "#c8a960" : "#78b478";
+          var radius = Math.max(mag * 4, 6);
+          L.circleMarker([coords[1], coords[0]], {
+            radius: radius, fillColor: color, color: color, weight: 1, opacity: .8, fillOpacity: .5
+          }).addTo(map).bindPopup(
+            "<strong>M" + mag.toFixed(1) + "</strong><br>" + f.properties.place +
+            "<br><small>" + new Date(f.properties.time).toLocaleString(locale) + "</small>"
+          );
+        });
+        window._quakeMap = map;
+
+        /* Table */
+        var tbody = document.querySelector("#quakeTable tbody");
+        features.slice().reverse().forEach(function (f) {
+          var d = new Date(f.properties.time);
+          var tr = document.createElement("tr");
+          tr.innerHTML =
+            "<td>" + d.toLocaleDateString(locale, { month: "short", day: "numeric" }) + " " + d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) + "</td>" +
+            "<td><strong>" + f.properties.mag.toFixed(1) + "</strong></td>" +
+            "<td>" + f.properties.place + "</td>" +
+            "<td>" + f.geometry.coordinates[2].toFixed(1) + "</td>";
+          tbody.appendChild(tr);
+        });
+
         var updEl = document.getElementById("quakeUpdated");
-        var now = new Date();
         updEl.textContent = (currentLang === "es" ? "Actualizado: " : "Updated: ") +
-          now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+          new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
       }).catch(function () {
         document.getElementById("quakeUpdated").textContent = "Could not load earthquake data.";
       });
