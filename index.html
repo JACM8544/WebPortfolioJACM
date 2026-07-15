@@ -64,7 +64,7 @@
           <a href="cv.html" target="_blank" class="cv-btn" data-i18n="cv_btn">Download CV</a>
 
           <p class="hero__about" data-i18n="hero_about">
-            Computer Systems Engineer with professional focus on data engineering, multi-cloud automation (Azure, AWS, GCS),
+            Computer Systems Engineer with professional focus on data engineering, multi-cloud automation (Azure, AWS, GCP),
             orchestrated pipelines, and governance-aligned practices. Academic and applied background in embedded systems,
             microcontroller instrumentation, RF communication, and domotics. Experience across logistics, finance, and pharma
             environments.
@@ -111,7 +111,7 @@
             <div class="carousel__content">
               <div class="carousel__title" data-i18n="hl2_title">Automation & Cloud Integrations</div>
               <div class="carousel__text" data-i18n="hl2_text">
-                Multi-cloud automation (Azure, AWS, GCS): file workflows via BOX API on Lambda/Azure Functions, data pipelines in GCS with SharePoint ingestion, and Power Platform solutions.
+                Multi-cloud automation (Azure, AWS, GCP): file workflows via BOX API on Lambda/Azure Functions, GCP pipelines with BigQuery + Dataform + Cloud Run, SharePoint ingestion, and Power Platform solutions.
               </div>
             </div>
           </div>
@@ -133,6 +133,15 @@
               </div>
             </div>
           </div>
+
+          <div class="carousel__slide">
+            <div class="carousel__content">
+              <div class="carousel__title" data-i18n="hl5_title">Multi-Cloud Cost Control</div>
+              <div class="carousel__text" data-i18n="hl5_text">
+                Billing guardrails, quotas, and budget alerts across Azure, AWS, and GCP to control and protect cloud spend before it becomes a problem.
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="carousel__dots">
@@ -140,6 +149,7 @@
           <button class="carousel__dot" data-index="1" aria-label="Slide 2"></button>
           <button class="carousel__dot" data-index="2" aria-label="Slide 3"></button>
           <button class="carousel__dot" data-index="3" aria-label="Slide 4"></button>
+          <button class="carousel__dot" data-index="4" aria-label="Slide 5"></button>
         </div>
       </div>
     </section>
@@ -169,8 +179,11 @@
             <li data-i18n="sil_5">Operate scheduled data refresh processes through Airflow pipelines to keep analytics platforms updated (including WHIZ AI).</li>
             <li data-i18n="sil_6">Build data catalogs to improve normalization, discoverability, and consumption.</li>
             <li data-i18n="sil_7">Automate end-to-end file workflows on BOX via its API, deploying on AWS Lambda and Azure Functions depending on the integration context.</li>
-            <li data-i18n="sil_8">Build complete data pipelines in Google Cloud (GCS) with SharePoint integrations for Excel/CSV ingestion, materializing tables from bronze (raw) to gold (consumption) layers.</li>
-            <li data-i18n="sil_9">Multi-cloud operations across Azure, AWS, and GCS through console and programmatic integrations for automation across platforms.</li>
+            <li data-i18n="sil_8">Build data pipelines on GCP: BigQuery for warehousing, Dataform for orchestrated SQL transformations (bronze &rarr; silver &rarr; gold), and Cloud Run for containerized ingestion, scraping, and automated transformation services, with SharePoint integration for Excel/CSV sources.</li>
+            <li data-i18n="sil_9">Deploy full-stack web solutions (backend + frontend) on Cloud Run for internal data consumption.</li>
+            <li data-i18n="sil_10">Design and implement monitoring and alerting on GCP Cloud Monitoring, including email notifications for critical pipeline failures.</li>
+            <li data-i18n="sil_11">Implement billing guardrails, quotas, and budget alerts across Azure, AWS, and GCP to control and protect cloud spend.</li>
+            <li data-i18n="sil_12">Multi-cloud operations across Azure, AWS, and GCP through console and programmatic integrations for automation across platforms.</li>
           </ul>
         </article>
 
@@ -186,6 +199,23 @@
             <li data-i18n="alg_1">Designed clear data schemas to optimize internal processes.</li>
             <li data-i18n="alg_2">Weekly monitoring of credit and billing for Banco Azteca.</li>
             <li data-i18n="alg_3">Implemented Salesforce data integrations and efficient ETL workflows.</li>
+            <li data-i18n="alg_4">Worked with Spark / Hadoop-based distributed processing over credit and collections data.</li>
+          </ul>
+        </article>
+
+        <!-- FREELANCE -->
+        <article class="tl-item">
+          <div class="tl-head">
+            <div class="pill pill--muted" data-i18n="fl_date">2023 &ndash; 2024 &middot; 18 months (parallel to full-time role)</div>
+            <span class="tl-company" data-i18n="fl_company">Freelance / Independent Consultant</span>
+          </div>
+          <div class="tl-role" data-i18n="fl_role">Data Engineer &mdash; Procurement & Bidding Platform &middot; Client: large-scale pharmaceutical distributor</div>
+          <ul>
+            <li data-i18n="fl_1">Sole owner end-to-end: architecture, data modeling, deployment, and ongoing support on Microsoft Azure.</li>
+            <li data-i18n="fl_2">Designed a star-schema database from scratch to track inventory and won/lost bidding processes, aligned with DAMA practices and ISO 8000 data-quality guidelines.</li>
+            <li data-i18n="fl_3">Built scraping automations against Mexican government procurement portals for structured and unstructured data acquisition.</li>
+            <li data-i18n="fl_4">Automated document generation for bidding submissions.</li>
+            <li data-i18n="fl_5">Power Apps front end for database interaction; Power BI dashboards for business monitoring.</li>
           </ul>
         </article>
 
@@ -214,7 +244,7 @@
     <section id="project" class="project-section fade-in">
       <div class="section-head">
         <h2 class="section-title" data-i18n="proj_title">Featured Project</h2>
-        <p class="muted" data-i18n="proj_subtitle">Personal end-to-end exploration project (2023&ndash;2024).</p>
+        <p class="muted" data-i18n="proj_subtitle">Showcase of the Freelance engagement listed above (2023&ndash;2024, 18 months).</p>
       </div>
 
       <div class="project-card">
@@ -223,24 +253,25 @@
         <div class="grid-2">
           <div>
             <ul>
-              <li data-i18n="proj_1">Web scraping to extract public information related to bidding processes.</li>
-              <li data-i18n="proj_2">Extraction of structured and unstructured data, compressed into ZIP packages consolidating a structured information table alongside associated files indexed by project or unique ID.</li>
-              <li data-i18n="proj_3">Database storage and data modeling for analytics and operational usage.</li>
-              <li data-i18n="proj_4">Power Apps platform to interact with the database.</li>
-              <li data-i18n="proj_5">Automation of document generation for bidding participation.</li>
+              <li data-i18n="proj_1">Sole owner end-to-end: architecture, data modeling, deployment, and ongoing support on Microsoft Azure.</li>
+              <li data-i18n="proj_2">Star-schema database designed from scratch to track inventory and won/lost bidding processes, aligned with DAMA practices and ISO 8000 data-quality guidelines.</li>
+              <li data-i18n="proj_3">Scraping automations against Mexican government procurement portals for structured and unstructured data acquisition.</li>
+              <li data-i18n="proj_4">Automated document generation for bidding submissions.</li>
+              <li data-i18n="proj_5">Power Apps front end for database interaction.</li>
               <li data-i18n="proj_6">Power BI dashboards for business intelligence and monitoring.</li>
             </ul>
 
-            <p class="muted" data-i18n="proj_note">Personal project &mdash; built independently to explore end-to-end data engineering and automation patterns.</p>
+            <p class="muted" data-i18n="proj_note">Client: large-scale pharmaceutical distributor (name under NDA). 18-month engagement carried out in parallel to full-time employment.</p>
           </div>
 
           <div class="callout">
             <h4 style="margin:0 0 8px 0;">Stack</h4>
             <p class="chips">
+              <span class="chip">Microsoft Azure</span>
               <span class="chip">Python</span>
               <span class="chip">SQL</span>
               <span class="chip">Web Scraping</span>
-              <span class="chip">Data Modeling</span>
+              <span class="chip" data-i18n="proj_chip_star">Star Schema</span>
               <span class="chip">Power Apps</span>
               <span class="chip">Power BI</span>
               <span class="chip" data-i18n="proj_chip_doc">Document Automation</span>
@@ -427,10 +458,17 @@
             <span class="chip">Airflow</span>
             <span class="chip" data-i18n="sk_sap">SAP Integrations</span>
             <span class="chip">WMS Blue Yonder</span>
+            <span class="chip">Microsoft Azure</span>
             <span class="chip">Azure Functions</span>
             <span class="chip">AWS Lambda</span>
-            <span class="chip">Google Cloud (GCS)</span>
+            <span class="chip">GCP</span>
+            <span class="chip">BigQuery</span>
+            <span class="chip">Dataform</span>
+            <span class="chip">Cloud Run</span>
+            <span class="chip">Cloud Storage</span>
+            <span class="chip">Cloud Monitoring</span>
             <span class="chip" data-i18n="sk_sp">SharePoint Integrations</span>
+            <span class="chip" data-i18n="sk_finops">Multi-Cloud Cost Control</span>
           </p>
         </div>
 
@@ -515,16 +553,18 @@
         nav_project: "Project", nav_demos: "Demos", nav_skills: "Skills", nav_education: "Education",
         hero_subtitle: "Computer Systems Engineer",
         cv_btn: "Download CV",
-        hero_about: "Computer Systems Engineer with professional focus on data engineering, multi-cloud automation (Azure, AWS, GCS), orchestrated pipelines, and governance-aligned practices. Academic and applied background in embedded systems, microcontroller instrumentation, RF communication, and domotics. Experience across logistics, finance, and pharma environments.",
+        hero_about: "Computer Systems Engineer with professional focus on data engineering, multi-cloud automation (Azure, AWS, GCP), orchestrated pipelines, and governance-aligned practices. Academic and applied background in embedded systems, microcontroller instrumentation, RF communication, and domotics. Experience across logistics, finance, and pharma environments.",
         highlights_title: "Highlights",
         hl1_title: "Data Lake & Governance",
         hl1_text: "Data standardization and catalogs aligned with DAMA and ISO-inspired guidelines to enable scalable consumption.",
         hl2_title: "Automation & Cloud Integrations",
-        hl2_text: "Multi-cloud automation (Azure, AWS, GCS): file workflows via BOX API on Lambda/Azure Functions, data pipelines in GCS with SharePoint ingestion, and Power Platform solutions.",
+        hl2_text: "Multi-cloud automation (Azure, AWS, GCP): file workflows via BOX API on Lambda/Azure Functions, GCP pipelines with BigQuery + Dataform + Cloud Run, SharePoint ingestion, and Power Platform solutions.",
         hl3_title: "Integrations (WMS / SAP)",
         hl3_text: "Experience building and maintaining integrations around legacy environments (Blue Yonder WMS) and SAP-related flows.",
         hl4_title: "Web Scraping & Data Acquisition",
         hl4_text: "Extraction of structured and unstructured data from web sources, consolidated into ZIP packages with structured tables and associated files indexed by project or unique ID.",
+        hl5_title: "Multi-Cloud Cost Control",
+        hl5_text: "Billing guardrails, quotas, and budget alerts across Azure, AWS, and GCP to control and protect cloud spend before it becomes a problem.",
         exp_title: "Professional Experience",
         exp_subtitle: "A focused view of responsibilities and technical scope.",
         sil_date: "Apr 2025 \u2013 Present",
@@ -535,12 +575,24 @@
         sil_5: "Operate scheduled data refresh processes through Airflow pipelines to keep analytics platforms updated (including WHIZ AI).",
         sil_6: "Build data catalogs to improve normalization, discoverability, and consumption.",
         sil_7: "Automate end-to-end file workflows on BOX via its API, deploying on AWS Lambda and Azure Functions depending on the integration context.",
-        sil_8: "Build complete data pipelines in Google Cloud (GCS) with SharePoint integrations for Excel/CSV ingestion, materializing tables from bronze (raw) to gold (consumption) layers.",
-        sil_9: "Multi-cloud operations across Azure, AWS, and GCS through console and programmatic integrations for automation across platforms.",
+        sil_8: "Build data pipelines on GCP: BigQuery for warehousing, Dataform for orchestrated SQL transformations (bronze \u2192 silver \u2192 gold), and Cloud Run for containerized ingestion, scraping, and automated transformation services, with SharePoint integration for Excel/CSV sources.",
+        sil_9: "Deploy full-stack web solutions (backend + frontend) on Cloud Run for internal data consumption.",
+        sil_10: "Design and implement monitoring and alerting on GCP Cloud Monitoring, including email notifications for critical pipeline failures.",
+        sil_11: "Implement billing guardrails, quotas, and budget alerts across Azure, AWS, and GCP to control and protect cloud spend.",
+        sil_12: "Multi-cloud operations across Azure, AWS, and GCP through console and programmatic integrations for automation across platforms.",
         alg_role: "Data Scientist \u2014 Credit & Collections",
         alg_1: "Designed clear data schemas to optimize internal processes.",
         alg_2: "Weekly monitoring of credit and billing for Banco Azteca.",
         alg_3: "Implemented Salesforce data integrations and efficient ETL workflows.",
+        alg_4: "Worked with Spark / Hadoop-based distributed processing over credit and collections data.",
+        fl_date: "2023 \u2013 2024 \u00b7 18 months (parallel to full-time role)",
+        fl_company: "Freelance / Independent Consultant",
+        fl_role: "Data Engineer \u2014 Procurement & Bidding Platform \u00b7 Client: large-scale pharmaceutical distributor",
+        fl_1: "Sole owner end-to-end: architecture, data modeling, deployment, and ongoing support on Microsoft Azure.",
+        fl_2: "Designed a star-schema database from scratch to track inventory and won/lost bidding processes, aligned with DAMA practices and ISO 8000 data-quality guidelines.",
+        fl_3: "Built scraping automations against Mexican government procurement portals for structured and unstructured data acquisition.",
+        fl_4: "Automated document generation for bidding submissions.",
+        fl_5: "Power Apps front end for database interaction; Power BI dashboards for business monitoring.",
         net_role: "Software Engineer \u2014 WMS (Blue Yonder) & Integrations",
         net_1: "Developed and maintained legacy solutions around Blue Yonder WMS for enterprise clients.",
         net_2: "Built mobile and RF screens integrating SQL, Java, Groovy, and occasional C#.",
@@ -550,16 +602,17 @@
         net_6: "Participated in SAP integrations.",
         net_7: "Clients: Soriana, Farmacias Guadalajara, DHL, Volkswagen.",
         proj_title: "Featured Project",
-        proj_subtitle: "Personal end-to-end exploration project (2023–2024).",
+        proj_subtitle: "Showcase of the Freelance engagement listed above (2023–2024, 18 months).",
         proj_name: "Procurement & Bidding Intelligence Platform",
-        proj_1: "Web scraping to extract public information related to bidding processes.",
-        proj_2: "Extraction of structured and unstructured data, compressed into ZIP packages consolidating a structured information table alongside associated files indexed by project or unique ID.",
-        proj_3: "Database storage and data modeling for analytics and operational usage.",
-        proj_4: "Power Apps platform to interact with the database.",
-        proj_5: "Automation of document generation for bidding participation.",
+        proj_1: "Sole owner end-to-end: architecture, data modeling, deployment, and ongoing support on Microsoft Azure.",
+        proj_2: "Star-schema database designed from scratch to track inventory and won/lost bidding processes, aligned with DAMA practices and ISO 8000 data-quality guidelines.",
+        proj_3: "Scraping automations against Mexican government procurement portals for structured and unstructured data acquisition.",
+        proj_4: "Automated document generation for bidding submissions.",
+        proj_5: "Power Apps front end for database interaction.",
         proj_6: "Power BI dashboards for business intelligence and monitoring.",
-        proj_note: "Personal project — built independently to explore end-to-end data engineering and automation patterns.",
+        proj_note: "Client: large-scale pharmaceutical distributor (name under NDA). 18-month engagement carried out in parallel to full-time employment.",
         proj_chip_doc: "Document Automation",
+        proj_chip_star: "Star Schema",
         live_title: "Live Data", live_subtitle: "Real-time public API consumption.",
         live_quakes_title: "Recent Earthquakes near Mexico",
         live_quakes_note: "Last 20 events, magnitude 2.5+ \u2014 USGS API",
@@ -583,7 +636,7 @@
         sk_cat3: "Orchestration, Integrations & Cloud",
         sk_cat4: "Embedded Systems & IoT", sk_cat5: "Academic Focus Areas",
         sk_dbdesign: "Database Design", sk_datanorm: "Data Normalization", sk_dataqual: "Data Quality",
-        sk_sap: "SAP Integrations", sk_sp: "SharePoint Integrations",
+        sk_sap: "SAP Integrations", sk_sp: "SharePoint Integrations", sk_finops: "Multi-Cloud Cost Control",
         sk_instr: "Instrumentation", sk_microauto: "Microcontroller Automation",
         sk_rf: "RF Communication", sk_encdec: "Encoding / Decoding", sk_domotics: "Domotics", sk_asm: "Assembly (Microchip PIC)",
         sk_dm: "Data Mining", sk_mobile: "Mobile Applications", sk_signals: "Signals Theory",
@@ -615,16 +668,18 @@
         nav_project: "Proyecto", nav_demos: "Demos", nav_skills: "Habilidades", nav_education: "Educaci\u00f3n",
         hero_subtitle: "Ingeniero en Sistemas Computacionales",
         cv_btn: "Descargar CV",
-        hero_about: "Ingeniero en Sistemas Computacionales con enfoque profesional en ingenier\u00eda de datos, automatizaci\u00f3n multi-nube (Azure, AWS, GCS), pipelines orquestados y pr\u00e1cticas alineadas a gobernanza. Formaci\u00f3n acad\u00e9mica y aplicada en sistemas embebidos, instrumentaci\u00f3n con microcontroladores, comunicaci\u00f3n por radiofrecuencia y dom\u00f3tica. Experiencia en log\u00edstica, finanzas y farmac\u00e9utica.",
+        hero_about: "Ingeniero en Sistemas Computacionales con enfoque profesional en ingenier\u00eda de datos, automatizaci\u00f3n multi-nube (Azure, AWS, GCP), pipelines orquestados y pr\u00e1cticas alineadas a gobernanza. Formaci\u00f3n acad\u00e9mica y aplicada en sistemas embebidos, instrumentaci\u00f3n con microcontroladores, comunicaci\u00f3n por radiofrecuencia y dom\u00f3tica. Experiencia en log\u00edstica, finanzas y farmac\u00e9utica.",
         highlights_title: "Destacados",
         hl1_title: "Data Lake y Gobernanza",
         hl1_text: "Estandarizaci\u00f3n de datos y cat\u00e1logos alineados con DAMA y lineamientos inspirados en ISO para habilitar consumo escalable.",
         hl2_title: "Automatizaci\u00f3n e Integraciones Cloud",
-        hl2_text: "Automatizaci\u00f3n multi-nube (Azure, AWS, GCS): flujos de archivos v\u00eda BOX API en Lambda/Azure Functions, pipelines en GCS con ingesta desde SharePoint, y soluciones Power Platform.",
+        hl2_text: "Automatizaci\u00f3n multi-nube (Azure, AWS, GCP): flujos de archivos v\u00eda BOX API en Lambda/Azure Functions, pipelines en GCP con BigQuery + Dataform + Cloud Run, ingesta desde SharePoint y soluciones Power Platform.",
         hl3_title: "Integraciones (WMS / SAP)",
         hl3_text: "Experiencia construyendo y manteniendo integraciones en entornos legacy (Blue Yonder WMS) y flujos relacionados con SAP.",
         hl4_title: "Web Scraping y Adquisici\u00f3n de Datos",
         hl4_text: "Extracci\u00f3n de datos estructurados y no estructurados de fuentes web, consolidados en paquetes ZIP con tablas estructuradas y archivos asociados indexados por proyecto o ID \u00fanico.",
+        hl5_title: "Control de Costos Multi-Nube",
+        hl5_text: "Guardrails de facturaci\u00f3n, cuotas y alertas de presupuesto en Azure, AWS y GCP para controlar y proteger el gasto en la nube antes de que se convierta en un problema.",
         exp_title: "Experiencia Profesional",
         exp_subtitle: "Vista enfocada de responsabilidades y alcance t\u00e9cnico.",
         sil_date: "Abr 2025 \u2013 Presente",
@@ -635,12 +690,24 @@
         sil_5: "Operaci\u00f3n de procesos programados de actualizaci\u00f3n de datos mediante pipelines de Airflow para mantener plataformas anal\u00edticas actualizadas (incluyendo WHIZ AI).",
         sil_6: "Construcci\u00f3n de cat\u00e1logos de datos para mejorar normalizaci\u00f3n, descubrimiento y consumo.",
         sil_7: "Automatizaci\u00f3n de flujos completos de archivos en BOX v\u00eda su API, desplegando en AWS Lambda y Azure Functions seg\u00fan el contexto de integraci\u00f3n.",
-        sil_8: "Construcci\u00f3n de pipelines completos en Google Cloud (GCS) con integraciones a SharePoint para ingesta de Excel/CSV, materializando tablas desde capa bronze (raw) hasta gold (consumo).",
-        sil_9: "Operaciones multi-nube en Azure, AWS y GCS mediante consola e integraciones program\u00e1ticas para automatizaci\u00f3n entre plataformas.",
+        sil_8: "Construcci\u00f3n de pipelines en GCP: BigQuery para warehousing, Dataform para transformaciones SQL orquestadas (bronze \u2192 silver \u2192 gold) y Cloud Run para servicios contenerizados de ingesta, scraping y transformaci\u00f3n automatizada, con integraci\u00f3n a SharePoint para fuentes Excel/CSV.",
+        sil_9: "Despliegue de soluciones web full-stack (backend + frontend) en Cloud Run para consumo interno de datos.",
+        sil_10: "Dise\u00f1o e implementaci\u00f3n de monitoreo y alertamiento en GCP Cloud Monitoring, incluyendo notificaciones por correo para fallas cr\u00edticas de pipelines.",
+        sil_11: "Implementaci\u00f3n de guardrails de facturaci\u00f3n, cuotas y alertas de presupuesto en Azure, AWS y GCP para controlar y proteger el gasto en la nube.",
+        sil_12: "Operaciones multi-nube en Azure, AWS y GCP mediante consola e integraciones program\u00e1ticas para automatizaci\u00f3n entre plataformas.",
         alg_role: "Cient\u00edfico de Datos \u2014 Cr\u00e9dito y Cobranza",
         alg_1: "Dise\u00f1o de esquemas de datos claros para optimizar procesos internos.",
         alg_2: "Monitoreo semanal de cr\u00e9dito y facturaci\u00f3n para Banco Azteca.",
         alg_3: "Implementaci\u00f3n de integraciones de datos con Salesforce y flujos ETL eficientes.",
+        alg_4: "Trabajo con procesamiento distribuido basado en Spark / Hadoop sobre datos de cr\u00e9dito y cobranza.",
+        fl_date: "2023 \u2013 2024 \u00b7 18 meses (en paralelo a empleo de tiempo completo)",
+        fl_company: "Freelance / Consultor Independiente",
+        fl_role: "Data Engineer \u2014 Plataforma de Licitaciones y Adquisiciones \u00b7 Cliente: distribuidor farmac\u00e9utico de gran escala",
+        fl_1: "Sole owner end-to-end: arquitectura, modelado de datos, despliegue y soporte continuo en Microsoft Azure.",
+        fl_2: "Dise\u00f1o desde cero de base de datos en esquema estrella para dar seguimiento a inventario y procesos de licitaci\u00f3n ganados/perdidos, alineado con pr\u00e1cticas DAMA y lineamientos de calidad de datos ISO 8000.",
+        fl_3: "Construcci\u00f3n de automatizaciones de scraping sobre portales de compras del gobierno mexicano para adquisici\u00f3n de datos estructurados y no estructurados.",
+        fl_4: "Automatizaci\u00f3n de generaci\u00f3n de documentos para env\u00edos de licitaciones.",
+        fl_5: "Front-end en Power Apps para interacci\u00f3n con la base de datos; dashboards de Power BI para monitoreo del negocio.",
         net_role: "Ingeniero de Software \u2014 WMS (Blue Yonder) e Integraciones",
         net_1: "Desarrollo y mantenimiento de soluciones legacy en Blue Yonder WMS para clientes empresariales.",
         net_2: "Construcci\u00f3n de pantallas m\u00f3viles y RF integrando SQL, Java, Groovy y ocasionalmente C#.",
@@ -650,16 +717,17 @@
         net_6: "Participaci\u00f3n en integraciones SAP.",
         net_7: "Clientes: Soriana, Farmacias Guadalajara, DHL, Volkswagen.",
         proj_title: "Proyecto Destacado",
-        proj_subtitle: "Proyecto personal de exploraci\u00f3n end-to-end (2023\u20132024).",
+        proj_subtitle: "Vitrina del engagement Freelance listado arriba (2023\u20132024, 18 meses).",
         proj_name: "Plataforma de Inteligencia de Licitaciones y Adquisiciones",
-        proj_1: "Web scraping para extraer informaci\u00f3n p\u00fablica relacionada con procesos de licitaci\u00f3n.",
-        proj_2: "Extracci\u00f3n de datos estructurados y no estructurados, comprimidos en paquetes ZIP consolidando una tabla de informaci\u00f3n estructurada junto con archivos asociados indexados por proyecto o ID \u00fanico.",
-        proj_3: "Almacenamiento en base de datos y modelado de datos para anal\u00edtica y uso operativo.",
-        proj_4: "Plataforma Power Apps para interactuar con la base de datos.",
-        proj_5: "Automatizaci\u00f3n de generaci\u00f3n de documentos para participaci\u00f3n en licitaciones.",
+        proj_1: "Sole owner end-to-end: arquitectura, modelado de datos, despliegue y soporte continuo en Microsoft Azure.",
+        proj_2: "Base de datos en esquema estrella dise\u00f1ada desde cero para dar seguimiento a inventario y procesos de licitaci\u00f3n ganados/perdidos, alineada con pr\u00e1cticas DAMA y lineamientos de calidad de datos ISO 8000.",
+        proj_3: "Automatizaciones de scraping sobre portales de compras del gobierno mexicano para adquisici\u00f3n de datos estructurados y no estructurados.",
+        proj_4: "Automatizaci\u00f3n de generaci\u00f3n de documentos para env\u00edos de licitaciones.",
+        proj_5: "Front-end en Power Apps para interacci\u00f3n con la base de datos.",
         proj_6: "Dashboards de Power BI para inteligencia de negocio y monitoreo.",
-        proj_note: "Proyecto personal \u2014 construido de forma independiente para explorar patrones de ingenier\u00eda de datos y automatizaci\u00f3n end-to-end.",
+        proj_note: "Cliente: distribuidor farmac\u00e9utico de gran escala (nombre bajo NDA). Engagement de 18 meses realizado en paralelo a empleo de tiempo completo.",
         proj_chip_doc: "Automatizaci\u00f3n Documental",
+        proj_chip_star: "Esquema Estrella",
         live_title: "Datos en Vivo", live_subtitle: "Consumo de APIs p\u00fablicas en tiempo real.",
         live_quakes_title: "Sismos Recientes cerca de M\u00e9xico",
         live_quakes_note: "\u00daltimos 20 eventos, magnitud 2.5+ \u2014 USGS API",
@@ -683,7 +751,7 @@
         sk_cat3: "Orquestaci\u00f3n, Integraciones y Cloud",
         sk_cat4: "Sistemas Embebidos e IoT", sk_cat5: "\u00c1reas de Enfoque Acad\u00e9mico",
         sk_dbdesign: "Dise\u00f1o de Bases de Datos", sk_datanorm: "Normalizaci\u00f3n de Datos", sk_dataqual: "Calidad de Datos",
-        sk_sap: "Integraciones SAP", sk_sp: "Integraciones SharePoint",
+        sk_sap: "Integraciones SAP", sk_sp: "Integraciones SharePoint", sk_finops: "Control de Costos Multi-Nube",
         sk_instr: "Instrumentaci\u00f3n", sk_microauto: "Automatizaci\u00f3n con Microcontroladores",
         sk_rf: "Comunicaci\u00f3n por RF", sk_encdec: "Codificaci\u00f3n / Decodificaci\u00f3n", sk_domotics: "Dom\u00f3tica", sk_asm: "Ensamblador (Microchip PIC)",
         sk_dm: "Miner\u00eda de Datos", sk_mobile: "Aplicaciones M\u00f3viles", sk_signals: "Teor\u00eda de Se\u00f1ales",
@@ -749,9 +817,19 @@
     })();
 
     /* ── Date ── */
-    document.getElementById("year").textContent = String(new Date().getFullYear());
-    document.getElementById("lastUpdated").textContent =
-      new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+    (function () {
+      var now = new Date();
+      var yearEl = document.getElementById("year");
+      var updEl = document.getElementById("lastUpdated");
+      if (yearEl) yearEl.textContent = String(now.getFullYear());
+      if (updEl) {
+        try {
+          updEl.textContent = now.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+        } catch (e) {
+          updEl.textContent = now.toISOString().slice(0, 10);
+        }
+      }
+    })();
 
     /* ── Carousel (fade) ── */
     (function () {
@@ -829,29 +907,21 @@
         if (started) return;
         started = true;
         counters.forEach(function (el) {
-          var target = parseInt(el.getAttribute("data-count"));
+          var target = parseInt(el.getAttribute("data-count"), 10);
+          if (!target || isNaN(target)) return;
           var current = 0;
           var duration = 1200;
-          var step = Math.ceil(duration / target / 16);
+          var interval = Math.max(duration / target, 30);
           var timer = setInterval(function () {
             current++;
-            el.textContent = current;
+            el.textContent = String(current);
             if (current >= target) clearInterval(timer);
-          }, duration / target);
+          }, interval);
         });
       }
 
-      var statsObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            animateCounters();
-            statsObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.5 });
-
-      var statsEl = document.querySelector(".hero__stats");
-      if (statsEl) statsObserver.observe(statsEl);
+      // Fire immediately after layout settles (hero is visible on load).
+      setTimeout(animateCounters, 250);
     })();
 
     /* ── Quake view toggle (chart/table) ── */
